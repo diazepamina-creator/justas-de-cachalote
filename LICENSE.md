@@ -1,7 +1,7 @@
 # Licencia
 
 **LAS JUSTAS DE CACHALOTE DEL LAGO**
-Manipulativo de azar y probabilidad para 2.º de ESO
+Manipulativo de azar y probabilidad para 1.º y 2.º de ESO
 
 © 2026 Andrés Asensio
 
@@ -36,7 +36,7 @@ permitido por la licencia.
 ## Cómo citar
 
 > Asensio, A. (2026). *Las justas de Cachalote del Lago: manipulativo de azar
-> y probabilidad para 2.º de ESO* [Aplicación web]. CC BY-NC-SA 4.0.
+> y probabilidad para 1.º y 2.º de ESO* [Aplicación web]. CC BY-NC-SA 4.0.
 
 ## Tipografías
 
