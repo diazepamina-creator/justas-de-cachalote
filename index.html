@@ -1,0 +1,1852 @@
+<!doctype html>
+<html lang="es" data-tema="sable" data-texto="normal" data-fuente="legible" data-movimiento="normal">
+<head>
+<!--
+  Las justas de Cachalote del Lago
+  © Andrés Asensio · CC BY-NC-ND 4.0 · https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es
+  Versión de aula generada el 2026-10-07 a partir del original 6ed369a.
+-->
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Andrés Asensio">
+<meta name="description" content="Azar y probabilidad para 1.º y 2.º de ESO: el sorteo del torneo, la mesa de dados, los dos dados, los escudos y por qué la casa siempre gana.">
+<meta name="theme-color" content="#16121F">
+<title>Las justas de Cachalote del Lago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;600&family=Space+Mono:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#16121F; --panel:#211A2C; --panel2:#2A2237; --linea:#453A55;
+  --tinta:#EFE3C6; --tenue:#B1A48C;
+  --gules:#C93A46; --gulesO:#8E1F2A; --azur:#5C8BD0; --azurO:#2C5A96; --sinople:#6BA478; --purpura:#A75E9C;
+  --oro:#D9A441; --plata:#B8B4A8; --sable:#16121F; --pergamino:#EFE3C6;
+  --acento:var(--gules); --acentoT:#16121F; --mal:#E8562E;
+  --figura:#EFE3C6; --figuraO:#B8B4A8; --hueco:#16121F;
+  --sombra:rgba(0,0,0,.55); --cuenta:#D9A441; --texto:15px;
+}
+[data-tema="pergamino"]{
+  --fondo:#EFE3C6; --panel:#F7EDD6; --panel2:#EADBB8; --linea:#C9B48C;
+  --tinta:#2A2118; --tenue:#6E5A42;
+  --gules:#A8202C; --gulesO:#7A1620; --azur:#2C5A96; --azurO:#1E3F6B; --sinople:#3B7448; --purpura:#6B2E63;
+  --oro:#B98A22; --plata:#8D8A80; --sable:#16121F; --pergamino:#EFE3C6;
+  --acentoT:#F7EDD6; --mal:#B3341A;
+  --figura:#2A2118; --figuraO:#4A3A2A; --hueco:#EFE3C6;
+  --sombra:rgba(42,33,24,.2); --cuenta:#7A1620;
+}
+[data-texto="grande"]{--texto:17.5px}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{background:var(--fondo)}
+html,body{overflow-x:clip}
+body{margin:0;color:var(--tinta);background:var(--fondo);
+  font-family:'Atkinson Hyperlegible',system-ui,sans-serif;font-size:var(--texto);line-height:1.5;
+  max-width:820px;margin:0 auto;padding:0 14px 40px}
+[data-fuente="inscripcion"] body{font-family:'Grenze Gotisch','Atkinson Hyperlegible',serif;font-size:calc(var(--texto) + 2px)}
+[data-movimiento="menos"] *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+
+.gallardetes{height:20px;margin:0 -14px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='20'><path d='M0 0 H18 L9 18 Z' fill='%23C93A46'/><path d='M18 0 H36 L27 18 Z' fill='%235C8BD0'/></svg>") repeat-x left top / 36px 20px}
+[data-tema="pergamino"] .gallardetes{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='20'><path d='M0 0 H18 L9 18 Z' fill='%23A8202C'/><path d='M18 0 H36 L27 18 Z' fill='%232C5A96'/></svg>")}
+
+header .cabeza{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-top:14px}
+h1{font-family:'Grenze Gotisch',serif;font-weight:600;font-size:34px;letter-spacing:.3px;margin:0;color:var(--gules);line-height:1}
+header .sub{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--tenue);margin:4px 0 0}
+.lanzas{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--tenue);
+  border:1px solid var(--linea);border-radius:20px;padding:4px 12px;transition:border-color .3s, box-shadow .3s}
+.lanzas b{color:var(--gules);font-weight:400;font-variant-numeric:tabular-nums}
+.lanzas svg{width:22px;height:14px}
+.lanzas.rota{border-color:var(--oro);box-shadow:0 0 18px var(--oro)}
+.barra{display:flex;gap:2px 14px;flex-wrap:wrap;margin:10px 0 0;font-family:'Grenze Gotisch',serif;font-size:19px;letter-spacing:.4px}
+.barra a,.barra button{font:inherit;color:var(--tenue);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:none}
+.barra a:hover,.barra button:hover,.barra button[aria-pressed="true"]{color:var(--gules)}
+.barra a:focus-visible,.barra button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.franja{margin:12px 0 0;padding:8px 12px;border:1px solid var(--linea);border-radius:10px;background:var(--panel);display:grid;grid-template-columns:38px 1fr;gap:6px 10px;align-items:center}
+.franja .escudo{grid-row:1/3;width:34px;height:40px}
+.franja .escudo svg{width:100%;height:100%;display:block}
+.franja .linea1{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.franja .rango{font-family:'Grenze Gotisch',serif;font-size:19px;color:var(--gules);letter-spacing:.3px}
+.franja .rango small{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tenue);margin-left:8px}
+.franja .cuenta{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--tenue)}
+.franja .barraR{height:6px;border-radius:3px;background:var(--fondo);overflow:hidden}
+.franja .barraR i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--gulesO),var(--gules));transition:width .5s ease}
+
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--linea);border-radius:12px;
+  padding:14px 14px 12px;margin:10px 0;box-shadow:0 6px 18px var(--sombra);position:relative}
+.salaRot{margin:-2px 0 10px}
+.salaRot b{font-family:'Grenze Gotisch',serif;font-weight:600;font-size:22px;letter-spacing:.3px;color:var(--gules)}
+.salaRot b::before{content:'';display:inline-block;width:10px;height:12px;background:var(--gules);margin-right:8px;vertical-align:-1px;clip-path:polygon(0 0,100% 0,50% 100%)}
+.salaRot span{font-family:'Grenze Gotisch',serif;font-size:16px;color:var(--tenue);margin-left:8px}
+.fila{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.etq{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tenue);min-width:74px}
+button.n{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;min-width:34px;min-height:34px;padding:5px 9px;border-radius:8px;
+  border:1px solid var(--linea);background:var(--panel);color:var(--tinta);cursor:pointer}
+button.n[aria-pressed="true"]{background:var(--gules);border-color:var(--gules);color:var(--acentoT)}
+button.n.v{font-family:'Grenze Gotisch',serif;font-weight:400;font-size:16px;letter-spacing:.3px}
+button.b{font-family:'Grenze Gotisch',serif;font-size:17px;letter-spacing:.4px;min-height:36px;padding:5px 14px;border-radius:9px;
+  border:1px solid var(--linea);background:var(--panel);color:var(--tinta);cursor:pointer}
+button.b:hover{border-color:var(--gules)}
+button.b.ok{background:var(--gules);border-color:var(--gules);color:var(--acentoT)}
+button.b:disabled{opacity:.45;cursor:default}
+button.b[aria-pressed="true"]{border-color:var(--gules);color:var(--gules)}
+button.b.armado{border-color:var(--mal);color:var(--mal)}
+button:focus-visible{outline:2px solid var(--oro);outline-offset:2px}
+.escena{background:var(--fondo);border:1px solid var(--linea);border-radius:10px;padding:10px;margin-top:10px;overflow-x:auto;position:relative}
+.escena svg{display:block;width:100%;height:auto}
+.lectura{margin:10px 0 0;font-size:var(--texto);line-height:1.55}
+.lectura b{color:var(--gules)}
+.lectura .cuenta{font-family:'Space Mono',monospace;font-size:13.5px;color:var(--cuenta);display:block;margin:6px 0 0;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+.lectura .def{display:block;margin:0 0 6px;padding:6px 10px;border-left:3px solid var(--purpura);font-family:'Grenze Gotisch',serif;font-size:calc(var(--texto) + 3px);color:var(--tinta);line-height:1.35}
+.lectura .murmullo{display:block;margin-top:6px;font-family:'Grenze Gotisch',serif;font-size:15px;color:var(--tenue)}
+
+.encargo{padding-left:70px;min-height:82px}
+.cara{position:absolute;left:12px;top:11px;width:46px;height:48px}
+.cara svg{width:100%;height:100%;display:block}
+.cara.toca{cursor:pointer}
+.quien{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--azur);margin-bottom:4px}
+.informe .quien{color:var(--oro)}
+.informe{border-left:3px solid var(--oro)}
+.informe.mal{border-left-color:var(--mal)}
+.encTxt{margin:0;font-size:var(--texto);line-height:1.55}
+.encTxt b{color:var(--gules)}
+.ops{display:grid;gap:6px;margin:10px 0 4px}
+.op{font-family:inherit;font-size:calc(var(--texto) - 1px);text-align:left;padding:10px 12px;border-radius:9px;border:1px solid var(--linea);
+  background:var(--panel);color:var(--tinta);cursor:pointer;line-height:1.4}
+.op[aria-pressed="true"]{border-color:var(--gules);background:var(--panel2)}
+.op.fallada{border-color:var(--mal);opacity:.65}
+.paso{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tenue);margin-left:auto}
+
+.asomo{position:absolute;pointer-events:none;z-index:4;opacity:0;overflow:hidden;
+  transition:transform .44s cubic-bezier(.34,1.56,.64,1), opacity .2s ease}
+.asomo svg{width:100%;height:auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.asomo.arriba{right:14px;top:0;width:62px;transform:translateY(20px)}
+.asomo.arriba.mira{opacity:1;transform:translateY(calc(-64% + 2px))}
+.asomo.arriba.mira.falla{transform:translateY(calc(-42% + 2px));transition:transform .5s ease-out, opacity .2s ease}
+.asomo.lado{right:0;top:18px;width:70px;transform:translateX(80px)}
+.asomo.lado.mira{opacity:1;transform:translateX(26px)}
+.asomo.entero{right:14px;top:-10px;width:76px;transform:translateY(-20px) scale(.6)}
+.asomo.entero.mira{opacity:1;transform:translateY(-70%) scale(1)}
+.globo{position:absolute;right:96px;top:22px;max-width:200px;background:var(--pergamino);color:#2A2118;border-radius:12px;padding:8px 11px;
+  font-size:13px;line-height:1.35;z-index:5;opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
+.globo::after{content:'';position:absolute;right:-8px;top:14px;border:6px solid transparent;border-left-color:var(--pergamino)}
+.globo.mira{opacity:1;transform:none}
+.cruza{position:absolute;left:-90px;bottom:54px;width:84px;pointer-events:none;z-index:6;animation:cruza 4s linear forwards}
+.cruza svg{width:100%;height:auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
+.cruza b{position:absolute;left:84px;bottom:14px;white-space:nowrap;background:var(--pergamino);color:#2A2118;border-radius:10px;padding:4px 9px;font-size:11.5px;font-weight:400;font-family:'Space Mono',monospace}
+@keyframes cruza{from{left:-90px}to{left:100%}}
+.hermanos{position:absolute;right:16px;top:-56px;width:120px;pointer-events:none;z-index:5}
+.hermanos svg{width:100%;height:auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5));animation:sube .5s cubic-bezier(.34,1.56,.64,1)}
+.hermanos b{position:absolute;left:-4px;top:-26px;white-space:nowrap;background:var(--pergamino);color:#2A2118;border-radius:10px;padding:4px 9px;font-size:11.5px;font-weight:400;font-family:'Grenze Gotisch',serif}
+@keyframes sube{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.lanzaRota{position:absolute;left:50%;top:-8px;width:220px;margin-left:-110px;pointer-events:none;z-index:7}
+.lanzaRota svg{width:100%;height:auto;display:block}
+.lanzaRota .mitad1{animation:rompe1 1.1s ease-out forwards;transform-origin:110px 10px}
+.lanzaRota .mitad2{animation:rompe2 1.1s ease-out forwards;transform-origin:110px 10px}
+@keyframes rompe1{to{transform:translate(-60px,40px) rotate(-38deg);opacity:0}}
+@keyframes rompe2{to{transform:translate(60px,40px) rotate(38deg);opacity:0}}
+
+.listaEnc{margin-top:8px;max-height:260px;overflow-y:auto;border:1px solid var(--linea);border-radius:9px;background:var(--fondo)}
+.listaEnc button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--linea);color:var(--tenue);cursor:pointer;
+  font-family:inherit;font-size:13px;padding:7px 10px;line-height:1.35}
+.listaEnc button:last-child{border-bottom:0}
+.listaEnc button:hover{background:var(--panel2);color:var(--tinta)}
+.listaEnc button b{color:var(--gules);font-family:'Space Mono',monospace;font-size:11px;margin-right:6px}
+.listaEnc button.hecho b{color:var(--sinople)}
+.listaEnc button.actual{color:var(--tinta);background:var(--panel2)}
+#diag{font-family:'Space Mono',monospace;font-size:11.5px;line-height:1.5;margin-top:10px}
+#diag .ok{color:var(--sinople)} #diag .ko{color:var(--mal)}
+.glosa{border-top:1px solid var(--linea);padding:9px 0;display:grid;grid-template-columns:120px 1fr;gap:4px 12px}
+.glosa:last-child{border-bottom:1px solid var(--linea)}
+.glosa b{font-family:'Grenze Gotisch',serif;color:var(--gules);font-size:19px;font-weight:600}
+.glosa i{font-family:'Space Mono',monospace;font-style:normal;font-size:10px;color:var(--tenue);display:block;letter-spacing:1px}
+.glosa p{margin:0;font-size:14px;color:var(--tinta)}
+.glosa.marca{background:rgba(217,164,65,.1);border-radius:8px;padding:9px 8px}
+@media (max-width:460px){ .glosa{grid-template-columns:1fr} }
+.deuda{border:1px solid var(--linea);border-radius:10px;padding:10px 12px;margin-top:8px;background:var(--fondo)}
+.deuda summary{cursor:pointer;font-weight:700;color:var(--tinta);font-size:15px;list-style:none;display:flex;gap:10px;align-items:baseline}
+.deuda summary::before{content:'▸';color:var(--gules);font-size:13px}
+.deuda[open] summary::before{content:'▾'}
+.deuda p{font-size:14px;color:var(--tinta);margin:8px 0 0}
+.aviso{font-size:13px;color:var(--tenue);margin:8px 0 0}
+.vetula .latin{font-family:'Grenze Gotisch',serif;font-size:22px;color:var(--oro);margin:6px 0 2px;line-height:1.3}
+.vetula .trad{font-style:italic;color:var(--tenue);margin:0 0 10px;font-size:14px}
+
+.tipos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tipos button.b{font-size:15px;padding:5px 10px;min-height:34px}
+.ejer{font-size:17px;margin:14px 0 8px;line-height:1.5}
+.ejer b{color:var(--gules)}
+.resp{font-family:'Space Mono',monospace;font-size:16px;padding:8px 10px;border-radius:9px;border:1px solid var(--linea);background:var(--fondo);color:var(--tinta);width:150px}
+.veredicto{margin-top:9px;padding:9px 11px;border:1px solid var(--linea);border-radius:9px;font-size:14px;color:var(--tinta);background:var(--fondo)}
+.veredicto.bien{border-color:var(--oro)}
+.veredicto b{color:var(--gules)}
+.marcador{display:flex;gap:16px;margin-top:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--tenue)}
+.marcador b{color:var(--gules);font-size:13px;margin-left:4px}
+.hoja{display:none}
+body.imprimiendo .hoja{display:block;background:#fff;color:#222;padding:20px;font-family:Georgia,serif}
+body.imprimiendo > *:not(.hoja){display:none !important}
+.hoja h2{font-family:'Grenze Gotisch',serif;font-size:22px;margin:0 0 4px}
+.hoja .cab{font-size:12px;color:#666;margin-bottom:14px}
+.hoja ol{padding-left:22px;font-size:15px;line-height:2.1}
+.hoja .clave{break-before:page;page-break-before:always;margin-top:30px;border-top:1px solid #999;padding-top:10px}
+.hoja .clave ol{line-height:1.7;font-size:13px}
+@media print{ .hoja{display:block} }
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:50;padding:14px}
+.modal .caja{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--linea);border-radius:14px;padding:18px 18px 14px;
+  width:min(520px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.modal h2{font-family:'Grenze Gotisch',serif;font-weight:600;font-size:24px;color:var(--gules);margin:0 0 2px;letter-spacing:.3px}
+.modal .sub{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--tenue);margin:0 0 14px}
+.aj{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center}
+.aj .etq{min-width:0}
+.aj .ops2{display:flex;flex-wrap:wrap;gap:6px}
+.aj .ops2 button{font-family:'Space Mono',monospace;font-size:11.5px;padding:6px 10px;border-radius:8px;border:1px solid var(--linea);background:var(--fondo);color:var(--tinta);cursor:pointer}
+.aj .ops2 button[aria-pressed="true"]{background:var(--gules);border-color:var(--gules);color:var(--acentoT)}
+.aj .ops2 button:disabled{opacity:.4;cursor:default}
+.nombre{font-family:inherit;font-size:15px;padding:8px 10px;border-radius:9px;border:1px solid var(--linea);background:var(--fondo);color:var(--tinta);width:100%;margin-bottom:10px}
+.albaran{font-family:'Space Mono',monospace;font-size:12px;line-height:1.55;white-space:pre-wrap;background:var(--fondo);border:1px solid var(--linea);
+  border-radius:9px;padding:10px 12px;color:var(--tinta);word-break:break-all}
+.albaran .sello{color:var(--gules)}
+.tourCapa{position:fixed;inset:0;z-index:80;cursor:pointer}
+.tourFoco{position:fixed;border-radius:12px;border:2px solid var(--oro);pointer-events:none;
+  box-shadow:0 0 0 9999px rgba(0,0,0,.66), 0 0 24px var(--oro);transition:all .35s ease}
+.tourGlobo{position:fixed;max-width:320px;background:var(--panel);color:var(--tinta);border:1px solid var(--linea);border-radius:12px;padding:12px 14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);cursor:default;transition:top .35s ease,left .35s ease}
+.tourGlobo b{font-family:'Grenze Gotisch',serif;font-size:19px;color:var(--gules);display:block;margin-bottom:4px;font-weight:600}
+.tourGlobo p{margin:0 0 10px;font-size:14px;line-height:1.45}
+.tourGlobo .pie{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.tourGlobo .num{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.4px;color:var(--tenue)}
+.tourGlobo button{font-family:'Grenze Gotisch',serif;font-size:16px;padding:5px 12px;border-radius:8px;
+  border:1px solid var(--linea);background:var(--panel);color:var(--tinta);cursor:pointer}
+.tourGlobo button.pri{background:var(--gules);border-color:var(--gules);color:var(--acentoT)}
+
+.boot{position:fixed;inset:0;z-index:9999;background:#16121F;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  transition:opacity .5s ease;cursor:pointer}
+.boot.fuera{opacity:0;pointer-events:none}
+.boot .tit{font-family:'Grenze Gotisch',serif;font-weight:600;font-size:clamp(28px,7vw,42px);color:#C93A46;letter-spacing:.3px;text-align:center;padding:0 16px}
+.bootEscena{position:relative;width:260px;height:150px}
+.bootEscena svg{width:100%;height:100%;display:block}
+.bootEscena .lanza1{transform-origin:20px 120px;animation:lanza1 1.6s ease-out forwards}
+.bootEscena .lanza2{transform-origin:240px 120px;animation:lanza2 1.6s ease-out forwards}
+.bootEscena .yelmo{transform-origin:130px 76px;animation:yelmoCae 1.2s cubic-bezier(.4,0,.8,1) 1.5s forwards}
+.bootEscena .chispa{opacity:0;transform-origin:130px 40px;animation:chispa .5s ease-out 1.55s forwards}
+@keyframes lanza1{from{transform:rotate(14deg)}to{transform:rotate(-4deg)}}
+@keyframes lanza2{from{transform:rotate(-14deg)}to{transform:rotate(4deg)}}
+@keyframes yelmoCae{to{transform:translateY(58px) rotate(40deg)}}
+@keyframes chispa{0%{opacity:0;transform:scale(.4)}40%{opacity:1}100%{opacity:0;transform:scale(1.6)}}
+.boot .lista{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#B1A48C;display:flex;gap:14px}
+.boot .lista span{opacity:0;animation:pasaLista .3s forwards}
+.boot .saltar{position:absolute;bottom:26px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#B1A48C;opacity:.8}
+@keyframes pasaLista{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+.nueva{animation:aparece .28s ease-out}
+@keyframes tiembla{0%,100%{transform:none}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.tiembla{animation:tiembla .35s ease-in-out 3;transform-origin:center}
+
+footer.pie{margin-top:26px;padding-top:12px;border-top:1px solid var(--linea);display:flex;justify-content:center}
+footer.pie a{display:inline-flex;align-items:center;gap:10px;color:var(--tenue);text-decoration:none;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase}
+footer.pie a:hover{color:var(--tinta)}
+footer.pie svg{width:100px;height:22px}
+footer.pie svg circle{fill:none;stroke:currentColor;stroke-width:1.6}
+footer.pie svg text{fill:currentColor;font-family:'Space Mono',monospace;font-size:9px;font-weight:700}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  .asomo.arriba.mira,.asomo.arriba.mira.falla{transform:translateY(calc(-64% + 2px))}
+  .cruza{animation:none;left:auto;right:12px}
+}
+@media (max-width:520px){ h1{font-size:28px} .encargo{padding-left:64px} }
+
+@media (min-width:900px){
+  body[data-aula="si"]{zoom:1.32;max-width:1430px}
+}
+@media (min-width:1100px){
+  body[data-aula="si"] .aulaRejilla{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);
+    gap:0 14px;align-items:start}
+  body[data-aula="si"] .colIzq,
+  body[data-aula="si"] .colDer{display:block;min-width:0}
+  body[data-aula="si"] .colIzq > .panel:first-child,
+  body[data-aula="si"] .colDer > .panel:first-child{margin-top:0}
+  body[data-aula="si"] .colIzq > footer.pie{margin-top:18px}
+}
+.aulaRejilla,.colIzq,.colDer{display:contents}
+.barra button.aula[aria-pressed="true"]{color:var(--acento)}
+</style>
+</head><body>
+
+<div class="boot" id="boot" role="status" aria-live="polite">
+  <div class="tit">Las justas de Cachalote del Lago</div>
+  <div class="bootEscena">
+    <svg viewBox="0 0 260 150" aria-hidden="true">
+      <ellipse cx="130" cy="138" rx="100" ry="7" fill="#2A2237"/>
+      <g class="lanza1"><path d="M20 120 L150 30" stroke="#8D6E4A" stroke-width="6" stroke-linecap="round"/><path d="M150 30 L162 22 L156 36 Z" fill="#B8B4A8" stroke="#16121F" stroke-width="1.2"/><circle cx="40" cy="106" r="7" fill="#C93A46" stroke="#16121F" stroke-width="1.2"/></g>
+      <g class="lanza2"><path d="M240 120 L110 30" stroke="#8D6E4A" stroke-width="6" stroke-linecap="round"/><path d="M110 30 L98 22 L104 36 Z" fill="#B8B4A8" stroke="#16121F" stroke-width="1.2"/><circle cx="220" cy="106" r="7" fill="#5C8BD0" stroke="#16121F" stroke-width="1.2"/></g>
+      <g class="chispa"><path d="M130 40 l4 -12 l3 11 l11 -5 l-8 9 l12 3 l-12 3 l8 9 l-11 -5 l-3 11 l-4 -12 l-10 6 l6 -10 l-12 -2 l12 -2 l-6 -10 Z" fill="#D9A441"/></g>
+      <g class="yelmo"><path d="M116 78 Q116 62 130 62 Q144 62 144 78 V88 H116 Z" fill="#E4E8EC" stroke="#16121F" stroke-width="1.6" stroke-linejoin="round"/><path d="M118 80 H142" stroke="#16121F" stroke-width="1.4"/><path d="M122 84 H138" stroke="#16121F" stroke-width="1"/><path d="M130 62 Q136 52 140 56 Q134 58 132 64 Z" fill="#C93A46" stroke="#16121F" stroke-width="1"/></g>
+    </svg>
+  </div>
+  <div class="lista" id="bootLista"></div>
+  <div class="saltar">toca para saltar</div>
+</div>
+
+<header>
+  <div class="gallardetes" aria-hidden="true"></div>
+  <div class="cabeza">
+    <div>
+      <h1>Las justas de Cachalote del Lago</h1>
+      <p class="sub">Azar y probabilidad · el patio de armas</p>
+    </div>
+    <div class="lanzas" id="lanzas" aria-label="Lanzas rotas"><svg viewBox="0 0 44 28" aria-hidden="true"><path d="M2 24 L34 6" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M34 6 L42 2 L38 10 Z" fill="currentColor"/></svg><span>lanzas</span><b id="lanzasT">0 de 15</b></div>
+  </div>
+  <nav class="barra" id="barra">
+    <a href="https://diazepamina-creator.github.io/linea.html">← Materiales</a>
+    <button id="bGuia">Guía</button>
+    <button id="bTaller" aria-pressed="false">Taller</button>
+    <button id="bIndice" aria-pressed="false">Salas</button>
+    <button id="bGlosario" aria-pressed="false">Glosario</button>
+    <button id="bDeudas" aria-pressed="false">Deudas</button>
+    <span style="flex:1"></span>
+    <button id="bAula" class="aula" aria-pressed="false">Aula</button>
+    <button id="bSello">Pergamino</button>
+    <button id="bAjustes">Ajustes</button>
+  </nav>
+  <div class="franja" id="franja">
+    <div class="escudo" id="rangoEscudo" aria-hidden="true"></div>
+    <div class="linea1">
+      <span class="rango"><span id="rangoNom">Paje</span><small id="rangoSig"></small></span>
+      <span class="cuenta" id="rangoCuenta"></span>
+    </div>
+    <div class="barraR"><i id="rangoBarra"></i></div>
+  </div>
+</header>
+
+<div class="panel encargo" id="pEncargo">
+  <div class="asomo lado" id="asomoLado" aria-hidden="true"></div>
+  <div class="globo" id="globoLado" aria-hidden="true"></div>
+  <div class="asomo entero" id="asomoEntero" aria-hidden="true"></div>
+  <div class="cara toca" id="caraCachalote" title="Cachalote del Lago"></div>
+  <div class="quien">Cachalote del Lago, caballero</div>
+  <p class="encTxt" id="encTxt"></p>
+  <div class="ops" id="ops" hidden></div>
+  <div class="fila">
+    <button class="b" id="atras" aria-label="Encargo anterior">◀</button>
+    <button class="b ok" id="comprobar">Comprobar</button>
+    <span class="paso" id="cual"></span>
+  </div>
+</div>
+<div class="panel informe encargo" id="informe" hidden>
+  <div class="asomo arriba" id="asomoArriba" aria-hidden="true"></div>
+  <div class="cara" id="caraPercebal"></div>
+  <div class="quien">Percebal, escudero · lleva la cuenta</div>
+  <p class="encTxt" id="infTxt"></p>
+</div>
+
+<div class="panel taller" id="pTaller" hidden>
+  <div class="salaRot"><b>El taller</b><span>práctica libre, y a la sala si hace falta</span></div>
+  <div class="tipos" id="tipos"></div>
+  <div class="ejer" id="ejer"></div>
+  <div class="fila" style="margin-top:6px" id="filaSiNo" hidden>
+    <button class="b" id="bSi">Sí</button><button class="b" id="bNo">No</button>
+  </div>
+  <div class="fila" style="margin-top:6px" id="filaResp">
+    <input class="resp" id="resp" type="text" inputmode="text" autocomplete="off" placeholder="tu respuesta">
+    <button class="b ok" id="corrige">Corregir</button>
+  </div>
+  <div class="fila" style="margin-top:6px">
+    <button class="b" id="otro">Otro</button>
+    <button class="b" id="verlo" hidden>Verlo en la sala</button>
+  </div>
+  <div class="veredicto" id="verTaller" hidden></div>
+  <div class="marcador"><span>aciertos <b id="tAc">0</b></span><span>racha <b id="tRacha">0</b></span><span>mejor <b id="tMejor">0</b></span></div>
+  <div class="fila">
+    <button class="b" id="hojaDiez">Imprimir una hoja de diez</button>
+    <span class="etq" style="min-width:0">con la clave en hoja aparte</span>
+  </div>
+</div>
+<div class="hoja" id="hoja"></div>
+
+<div class="panel" id="pGlosario" hidden>
+  <div class="salaRot"><b>El glosario</b><span>las palabras del torneo y de la taberna</span></div>
+  <div id="glosas"></div>
+</div>
+
+<div class="panel" id="pDeudas" hidden>
+  <div class="salaRot"><b>Las deudas</b><span>lo que se ve, lo que se supone y lo que se demuestra en otro sitio</span></div>
+  <p class="aviso" style="margin:0 0 10px">Tres cosas de estas justas no son teoremas de segundo. Una es un teorema de verdad que aquí solo se mira; otra
+  es una definición con condiciones; y la tercera es una suposición sobre cómo se portan los dados.</p>
+  <details class="deuda">
+    <summary>Por qué la frecuencia se acerca a la probabilidad</summary>
+    <p>En la mesa de dados se ve: con diez tiradas la frecuencia del seis salta de un lado a otro; con mil, se pone al lado de un
+    sexto y ya no se aleja mucho. Eso tiene nombre, <b>ley de los grandes números</b>, y es un teorema: lo demostró Jakob
+    Bernoulli en 1713, después de veinte años dándole vueltas. Aquí no se demuestra. Se enuncia como lo que se observa, y se
+    dice que hay una demostración y que es de mayores.</p>
+    <p>Lo que no dice el teorema: que después de cinco seises «toca» un uno. El dado no tiene memoria. La frecuencia se acerca
+    porque las tiradas nuevas pesan cada vez menos en la cuenta, no porque el dado compense.</p>
+  </details>
+  <details class="deuda">
+    <summary>Por qué la cuenta de Laplace tiene una condición</summary>
+    <p>Favorables partido por posibles vale cuando los posibles tienen <b>la misma ventura</b>. Eso no se demuestra: se supone
+    del dado honrado, porque es simétrico, y se comprueba tirando. Con el dado de la casa la simetría no está, la condición
+    falla, y la cuenta no vale: el seis no es un sexto y no hay nada que contar. Solo queda la frecuencia.</p>
+    <p>Por eso el dado cargado está en la app: una definición se entiende cuando se la ve fallar.</p>
+  </details>
+  <details class="deuda">
+    <summary>Por qué dos dados dan treinta y seis casos, y no veintiuno</summary>
+    <p>Un tres y un cuatro parecen un solo caso, pero son dos: tres en el rojo y cuatro en el azul, o al revés. Contar los
+    treinta y seis es una <b>manera de contar</b> en la que el orden importa aunque no se vea. Y que los treinta y seis tengan la
+    misma ventura es una <b>suposición</b>: que un dado no sabe lo que ha hecho el otro. Es razonable, y se comprueba tirando.</p>
+    <p>Es difícil de verdad. Leibniz creyó que once y doce eran igual de fáciles con dos dados, y d'Alembert se equivocó igual
+    con dos monedas. Se cuenta para que nadie se avergüence de dudar aquí.</p>
+  </details>
+</div>
+
+<div class="panel vetula" id="pVetula" hidden>
+  <div class="salaRot"><b>El poema que contó los dados</b><span>lo que no está en el índice</span></div>
+  <p class="latin">Si tres dados tiras, cincuenta y seis son las formas; / mas de tiradas, doscientas dieciséis.</p>
+  <p class="trad">Del <i>De Vetula</i>, un poema latino de hacia 1250 que se hacía pasar por obra de Ovidio.</p>
+  <p>Trescientos años antes que Cardano y cuatrocientos antes que Pascal, alguien contó bien los tres dados. Contó las
+  <b>formas</b>, que son las combinaciones sin orden (un uno, un dos y un tres es una sola forma), y le salieron cincuenta y seis.
+  Y contó las <b>tiradas</b>, que son con orden (uno-dos-tres y tres-dos-uno son distintas), y le salieron doscientas dieciséis:
+  seis por seis por seis. Y explicó lo que importa: que las formas no tienen la misma ventura, porque unas se pueden tirar de
+  más maneras que otras. La forma «tres seises» solo sale de una tirada; la forma «uno, dos, tres», de seis.</p>
+  <div class="escena"><svg id="svgVetula" viewBox="0 0 540 250" role="img" aria-label="Las sumas de tres dados, de tres a dieciocho, con sus tiradas"></svg></div>
+  <p style="margin-top:10px">Cuatrocientos años después, en Florencia, unos jugadores le preguntaron a Galileo por qué el diez sale
+  más que el nueve con tres dados, si los dos tienen seis formas. Galileo contó las tiradas: veintisiete contra veinticinco. El
+  poema ya lo sabía.</p>
+  <p class="aviso">Esta sala se ha abierto porque alguien ha encontrado el tercer dado, o ha escrito el nombre del poema. No sale en el índice.</p>
+</div>
+
+<div class="panel" id="pIndice" hidden>
+  <div class="salaRot"><b>Índice</b><span>las salas, sueltas</span></div>
+  <div class="fila"><span class="etq">salas</span><span id="ixSalas"></span></div>
+  <div class="fila">
+    <button class="b" id="ixCerrar">Volver al encargo</button>
+    <button class="b" id="ixTodo">Marcar todo hecho</button>
+    <button class="b" id="ixCero">Empezar de cero</button>
+  </div>
+  <div class="etq" style="margin-top:12px">los encargos</div>
+  <div class="listaEnc" id="ixLista"></div>
+  <div class="fila">
+    <button class="b" id="ixDiag">Autodiagnóstico</button>
+    <span class="etq" style="min-width:0">prueba cada cuenta contra sí misma</span>
+  </div>
+  <div id="diag" hidden></div>
+</div>
+
+<div class="panel" id="pSorteo">
+  <div class="fila" style="margin-top:0"><span class="etq">caballeros</span><span id="sN"></span></div>
+  <div class="fila"><span class="etq">el yelmo</span>
+    <button class="b ok" id="sSacar">Sacar del yelmo</button>
+    <button class="b" id="sVaciar">Devolver</button>
+  </div>
+  <div class="escena"><svg id="svgSorteo" viewBox="0 0 540 300" role="img" aria-label="Los caballeros del torneo con sus escudos, y el yelmo del sorteo"></svg></div>
+  <p class="lectura" id="lecSorteo"></p>
+</div>
+
+<div class="panel" id="pMesa" hidden>
+  <div class="fila" style="margin-top:0"><span class="etq">el dado</span><span id="mDado"></span></div>
+  <div class="fila"><span class="etq">tirar</span><span id="mTirar"></span><button class="b" id="mVaciar">Vaciar la mesa</button></div>
+  <div class="escena"><svg id="svgMesa" viewBox="0 0 540 300" role="img" aria-label="Las seis caras con su frecuencia, la raya de un sexto y la frecuencia del seis tirada a tirada"></svg></div>
+  <p class="lectura" id="lecMesa"></p>
+</div>
+
+<div class="panel" id="pDados" hidden>
+  <div class="fila" style="margin-top:0"><span class="etq">el suceso</span><span id="dSuceso"></span></div>
+  <div class="fila"><span class="etq">tirar</span><span id="dTirar"></span><button class="b" id="dVaciar">Vaciar</button></div>
+  <div class="escena"><svg id="svgDados" viewBox="0 0 540 320" role="img" aria-label="La tabla de treinta y seis casillas con el suceso encendido, y los dos dados"></svg></div>
+  <p class="lectura" id="lecDados"></p>
+</div>
+
+<div class="panel" id="pHeraldica" hidden>
+  <div class="fila" style="margin-top:0"><span class="etq">el suceso</span><span id="hSuceso"></span></div>
+  <div class="fila"><span class="etq">al azar</span><button class="b ok" id="hSacar">Sacar un escudo</button></div>
+  <div class="escena"><svg id="svgHeraldica" viewBox="0 0 540 300" role="img" aria-label="Los doce escudos en una tabla de dos por dos, con los del suceso encendidos"></svg></div>
+  <p class="lectura" id="lecHeraldica"></p>
+</div>
+
+<div class="panel" id="pBanca" hidden>
+  <div class="fila" style="margin-top:0"><span class="etq">se apuesta a</span><span id="bSuceso"></span></div>
+  <div class="fila"><span class="etq">la casa paga</span><span id="bPaga"></span></div>
+  <div class="fila"><span class="etq">jugar</span><span id="bJugar"></span><button class="b" id="bVaciar">Nueva bolsa</button></div>
+  <div class="escena"><svg id="svgBanca" viewBox="0 0 540 300" role="img" aria-label="La bolsa del jugador ronda a ronda, y la cuenta de lo que cobra y paga la casa"></svg></div>
+  <p class="lectura" id="lecBanca"></p>
+</div>
+
+<div class="modal" id="mAjustes" hidden>
+  <div class="caja" role="dialog" aria-modal="true" aria-labelledby="ajTit">
+    <h2 id="ajTit">Ajustes</h2>
+    <p class="sub">Para el aula y para cada aparato</p>
+    <div class="aj" id="aj"></div>
+    <div class="fila" style="margin-top:14px">
+      <button class="b" id="ajCerrar">Cerrar</button>
+      <span class="etq" style="min-width:0">se guardan en este aparato</span>
+    </div>
+  </div>
+</div>
+<div class="modal" id="mSello" hidden>
+  <div class="caja" role="dialog" aria-modal="true" aria-labelledby="selloTit">
+    <h2 id="selloTit">El pergamino del heraldo</h2>
+    <p class="sub">Lo hecho en esta sesión, para copiar y pegar donde haga falta</p>
+    <input class="nombre" id="selloNombre" placeholder="Nombre del paje" autocomplete="off" aria-label="Nombre">
+    <div class="albaran" id="selloTexto"></div>
+    <div class="fila" style="margin-top:12px">
+      <button class="b ok" id="selloCopiar">Copiar</button>
+      <button class="b" id="selloCerrar">Cerrar</button>
+      <span class="etq" id="selloAviso" style="min-width:0"></span>
+    </div>
+  </div>
+</div>
+<div class="tourCapa" id="tourCapa" hidden>
+  <div class="tourFoco" id="tourFoco"></div>
+  <div class="tourGlobo" id="tourGlobo" role="dialog" aria-modal="true">
+    <b id="tourTit"></b><p id="tourTxt"></p>
+    <div class="pie"><span class="num" id="tourNum"></span>
+      <span><button id="tourSalir">Salir</button> <button class="pri" id="tourSig">Siguiente</button></span></div>
+  </div>
+</div>
+
+<footer class="pie">
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es" rel="license" aria-label="Licencia Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0">
+    <svg viewBox="0 0 100 22" aria-hidden="true">
+      <circle cx="11" cy="11" r="10"/><text x="11" y="14.5" text-anchor="middle">CC</text>
+      <circle cx="37" cy="11" r="10"/><text x="37" y="14.5" text-anchor="middle">BY</text>
+      <circle cx="63" cy="11" r="10"/><text x="63" y="14.5" text-anchor="middle">NC</text>
+      <circle cx="89" cy="11" r="10"/><text x="89" y="14.5" text-anchor="middle">ND</text>
+    </svg>
+    <span>© 2026 Andrés Asensio · CC BY-NC-ND 4.0</span>
+  </a>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const redondo = (x, n = 2) => Math.round(x * 10**n) / 10**n;
+function cifra(x, n = 2){
+  const v = redondo(x, n); const [ent, dec] = String(v).split('.');
+  return ent.replace(/\B(?=(\d{3})+$)/g, '.') + (dec ? ',' + dec : '');
+}
+const al = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const elige = arr => arr[al(0, arr.length - 1)];
+const mcd = (a, b) => b ? mcd(b, a % b) : a;
+function frac(n, d){
+  if(n === 0) return '0/' + d + ' = 0';
+  const g = mcd(n, d), s = n / g + '/' + d / g;
+  if(d / g === 1) return n + '/' + d + ' = 1';
+  return g > 1 ? n + '/' + d + ' = ' + s : s;
+}
+const dec = (n, d, k = 2) => cifra(n / d, k);
+const el = (g, t, at, txt) => { const e = document.createElementNS(NS, t); for(const q in at) e.setAttribute(q, at[q]); if(txt !== undefined) e.textContent = txt; g.appendChild(e); return e; };
+const txt = (g, x, y, t, at = {}) => el(g, 'text', Object.assign({x, y, fill:'var(--tenue)', 'font-family':"'Space Mono',monospace", 'font-size':12.5}, at), t);
+const gotica = (g, x, y, t, at = {}) => txt(g, x, y, t, Object.assign({'font-family':"'Grenze Gotisch',serif", 'font-size':17, fill:'var(--gules)'}, at));
+
+const CARA_CACHALOTE = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <path d="M3 46 Q3 33 14 29.5 L32 29.5 Q43 33 43 46 Z" fill="#C6CBD1" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M3 46 Q3 33 14 29.5 L17 29.5 Q9 35 9 46 Z" fill="#E4E8EC" opacity=".75"/>
+  <path d="M15 33 L31 33 L31 46 L15 46 Z" fill="#3F5866" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <g stroke="#9FD0E6" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <path d="M17.4 37 Q20 35.4 23 37 Q26 38.6 28.6 37"/>
+    <path d="M17.4 41.4 Q20 39.8 23 41.4 Q26 43 28.6 41.4"/>
+  </g>
+  <ellipse cx="8.6" cy="33.4" rx="6" ry="4.6" fill="#9AA2AC" stroke="#241C36" stroke-width="1.3"/>
+  <ellipse cx="37.4" cy="33.4" rx="6" ry="4.6" fill="#9AA2AC" stroke="#241C36" stroke-width="1.3"/>
+  <circle cx="8.6" cy="33.4" r="1.5" fill="#E0B24A"/><circle cx="37.4" cy="33.4" r="1.5" fill="#E0B24A"/>
+  <path d="M6 10.5 Q6 6 10.5 6 L31 6 Q35.5 6 35.5 10.5 L35.5 21.5 Q35.5 24.5 31.5 25 L9 25 Q6 24.5 6 21.5 Z"
+        fill="#5B7A8C" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M6 10.5 Q6 6 10.5 6 L14 6 Q10 10 10 25 L9 25 Q6 24.5 6 21.5 Z" fill="#7396A8" opacity=".75"/>
+  <path d="M6.6 22.4 Q20 25.6 35 22.4" stroke="#241C36" stroke-width="1.1" fill="none" opacity=".55"/>
+  <path d="M13 24.6 L32 24.6 Q33.6 28.6 30 29.4 L15.4 29.4 Q12.2 28.4 13 24.6 Z"
+        fill="#3F5866" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+  <g fill="#EFE7D6" stroke="#241C36" stroke-width=".8">
+    <path d="M16 24.8 L17.2 28.2 L18.4 24.8 Z"/><path d="M20.4 24.8 L21.6 28.4 L22.8 24.8 Z"/>
+    <path d="M24.8 24.8 L26 28.4 L27.2 24.8 Z"/><path d="M29 24.8 L30 27.8 L31 24.8 Z"/>
+  </g>
+  <circle cx="10.4" cy="19.4" r="2.4" fill="#f2f6fb" stroke="#241C36" stroke-width="1"/>
+  <circle cx="10.8" cy="19.6" r="1.2" fill="#140F1F"/>
+  <circle cx="10" cy="18.8" r=".5" fill="#fff"/>
+  <ellipse cx="11.5" cy="7.4" rx="1.6" ry="1" fill="#241C36" opacity=".7"/>
+  <path d="M11.5 6.2 Q10.4 2.6 12.6 .8" stroke="#9FD0E6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M11.5 6.2 Q14.4 3.6 17 3.4" stroke="#9FD0E6" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".6"/>
+  <path d="M19 6.2 Q24.4 1.6 29.8 5.2 L29.8 8.6 Q24.4 5 19 9 Z"
+        fill="#E4E8EC" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M19.2 7.2 Q24.4 4 29.6 6.8" stroke="#241C36" stroke-width="1.2" fill="none"/>
+  <path d="M24.4 1.8 L24.4 0" stroke="#241C36" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M24.4 .4 Q28.4 -.6 29.8 1.8 Q26.8 2.2 24.4 2.8 Z" fill="#B0392C" stroke="#241C36" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M37.6 31 Q42.4 27.6 41.2 22.4" fill="none" stroke="#241C36" stroke-width="5.2" stroke-linecap="round"/>
+  <path d="M37.6 31 Q42.4 27.6 41.2 22.4" fill="none" stroke="#5B7A8C" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M41.6 24 Q45.4 21.4 44.4 17.4 Q41.4 19.4 40.2 22.8 Z" fill="#5B7A8C" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M42.4 46 L40 13" stroke="#241C36" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M42.2 45 L40.2 14" stroke="#8A5E3B" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M40 13 L37.6 7.6 L42.6 8.2 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>`;
+const CARA_JEFARTURO = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <path d="M5 46 Q6 33 17 30 L29 30 Q40 33 41 46 Z" fill="#B0392C" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M17 30 Q23 36 29 30 L31 31 Q23 39 15 31 Z" fill="#EFE7D6" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <g fill="#241C36"><circle cx="18" cy="34.4" r=".9"/><circle cx="23" cy="36" r=".9"/><circle cx="28" cy="34.4" r=".9"/></g>
+  <circle cx="23" cy="18" r="9.4" fill="#7FA35C" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M18.6 18.4 L8.4 18.4 Q5 18.4 5 21.8 Q5 25.2 8.4 25.2 L18.6 25.2 Z" fill="#7FA35C" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+  <rect x="15" y="18.8" width="4.4" height="6" fill="#7FA35C"/>
+  <circle cx="7.6" cy="20.8" r=".8" fill="#241C36"/>
+  <path d="M6.8 23.9 H15.6" stroke="#241C36" stroke-width="1" stroke-linecap="round"/>
+  <path d="M27 14 L30.6 9.6 L29 15.6" fill="none" stroke="#5B6B3D" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="19.6" cy="17" r="3.6" fill="#f2f6fb" stroke="#241C36" stroke-width="1.3"/>
+  <circle cx="27.4" cy="16.6" r="3.6" fill="#f2f6fb" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M23.2 16.9 H23.8" stroke="#241C36" stroke-width="1.3"/>
+  <circle cx="19.9" cy="17.2" r="1.4" fill="#140F1F"/><circle cx="27.7" cy="16.8" r="1.4" fill="#140F1F"/>
+  <path d="M13.6 10 L16 4.6 L19.4 8.4 L23 3.4 L26.6 8.4 L30 4.6 L32.4 10 Z"
+        fill="#E0B24A" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+  <rect x="13.2" y="9.4" width="19.6" height="3.4" rx="1.4" fill="#E0B24A" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="23" cy="11.1" r="1.2" fill="#B0392C"/>
+  <path d="M37.5 46 L37.5 20" stroke="#241C36" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M37.5 45 L37.5 21" stroke="#E0B24A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="37.5" cy="17.6" r="3.4" fill="#E0B24A" stroke="#241C36" stroke-width="1.3"/>
+</svg>`;
+const CARA_LISTOSIN = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <path d="M7 46 Q8 34 18 31 L28 31 Q38 34 39 46 Z" fill="#5FA0BE" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M7 46 Q8 34 18 31 L20 31 Q15 37 15 46 Z" fill="#2F6E8C" opacity=".75"/>
+  <circle cx="23" cy="21" r="9" fill="#5FA0BE" stroke="#241C36" stroke-width="1.3"/>
+  <path d="M23 12 a9 9 0 0 0 0 18 a6 9 0 0 1 0 -18 z" fill="#7FC9E2" opacity=".5"/>
+  <path d="M28.4 20.2 L35.6 22.6 L28.4 25 Z" fill="#E0B24A" stroke="#241C36" stroke-width="1.1" stroke-linejoin="round"/>
+  <circle cx="25.4" cy="20" r="2.1" fill="#f2f6fb"/><circle cx="20.6" cy="20" r="1.9" fill="#f2f6fb"/>
+  <circle cx="25.7" cy="20.2" r=".95" fill="#140F1F"/><circle cx="20.9" cy="20.2" r=".85" fill="#140F1F"/>
+  <rect x="23.6" y="17.2" width="4" height="1.4" rx=".7" fill="#241C36" transform="rotate(-12 25.6 17.9)"/>
+  <rect x="18.2" y="17.3" width="4" height="1.4" rx=".7" fill="#241C36" transform="rotate(12 20.2 18)"/>
+  <path d="M18 26.5 Q23 25.5 28 26.5 Q28 34 23 37 Q18 34 18 26.5 Z"
+        fill="#EFE7D6" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M21 29 Q23 31 25 29" stroke="#C9BDA6" stroke-width="1" fill="none"/>
+  <g transform="translate(3.4 0)">
+  <path d="M11.6 13.4 Q19 -3 30 2.6 Q26 9 26.6 13.4 Z" fill="#B0392C" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+  <rect x="10.4" y="12.4" width="18" height="3.6" rx="1.6" fill="#B0392C" stroke="#241C36" stroke-width="1.2"/>
+  <g fill="#E0B24A">
+    <path d="M20 6 L21 8.2 L23.2 8.6 L21.4 10 L21.9 12.2 L20 11 L18.1 12.2 L18.6 10 L16.8 8.6 L19 8.2 Z"/>
+    <circle cx="24.6" cy="4.6" r="1.1"/><circle cx="16.4" cy="12.2" r=".9"/>
+  </g>
+  </g>
+  <path d="M40 46 L36.6 16" stroke="#241C36" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M39.8 45 L36.8 17" stroke="#8A5E3B" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="36.3" cy="13.4" r="3.2" fill="#9FD0E6" stroke="#241C36" stroke-width="1.3"/>
+  <circle cx="35.4" cy="12.4" r="1" fill="#fff" opacity=".9"/>
+</svg>`;
+const CARA_PERCEBAL = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <ellipse cx="23" cy="45.4" rx="15" ry="2" fill="#140F1F" opacity=".45"/>
+  <path d="M6 44 Q23 36 40 44 L40 46 H6 Z" fill="#9AA2AC" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M9 43.4 Q23 38.6 37 43.4" fill="none" stroke="#C6CBD1" stroke-width="1"/>
+  <path d="M17 40 Q14 30 17 22 L29 22 Q32 30 29 40 Z" fill="#4A3838" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <g stroke="#241C36" stroke-width=".9" fill="none" opacity=".6"><path d="M16.2 27 Q23 29 29.8 27"/><path d="M15.8 31 Q23 33 30.2 31"/><path d="M16 35 Q23 37 30 35"/></g>
+  <path d="M12 22 Q12 6 23 5 Q34 6 34 22 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M23 5 V22" stroke="#9AA2AC" stroke-width="1.2"/>
+  <path d="M15.6 9.6 Q14 15 14.4 22 M30.4 9.6 Q32 15 31.6 22" stroke="#9AA2AC" stroke-width="1" fill="none"/>
+  <path d="M12 22 H34" stroke="#241C36" stroke-width="1.4"/>
+  <g fill="none" stroke="#C08A5E" stroke-width="1.5" stroke-linecap="round">
+    <path d="M22 5.4 Q19 1.6 15 2.4"/><path d="M23 5 Q23 .6 26.4 1"/><path d="M24 5.4 Q27.4 1.8 31 3"/>
+  </g>
+  <circle cx="19.4" cy="14.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="26.6" cy="14.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="19.9" cy="14.6" r="1.5" fill="#140F1F"/><circle cx="27.1" cy="14.6" r="1.5" fill="#140F1F"/>
+  <path d="M19 19.2 Q23 21.4 27 19.2" fill="none" stroke="#241C36" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M33 16 Q41 14 42 22" fill="none" stroke="#C08A5E" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M38 12 L44 28" stroke="#E0B24A" stroke-width="2.2" stroke-linecap="round"/>
+  <g stroke="#241C36" stroke-width=".9"><path d="M38.6 15.4 l2.4 -.9"/><path d="M39.8 18.6 l2.4 -.9"/><path d="M41 21.8 l2.4 -.9"/></g>
+  <path d="M28 6 Q31 2 34.6 3.6 Q31.6 5.4 29.4 8.2 Z" fill="#B0392C" stroke="#241C36" stroke-width="1" stroke-linejoin="round"/>
+</svg>`;
+const PERCEBAL_HERALDO = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <ellipse cx="23" cy="45.4" rx="15" ry="2" fill="#140F1F" opacity=".45"/>
+  <path d="M6 44 Q23 36 40 44 L40 46 H6 Z" fill="#9AA2AC" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M9 43.4 Q23 38.6 37 43.4" fill="none" stroke="#C6CBD1" stroke-width="1"/>
+  <path d="M17 40 Q14 30 17 22 L29 22 Q32 30 29 40 Z" fill="#4A3838" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <g stroke="#241C36" stroke-width=".9" fill="none" opacity=".6"><path d="M16.2 27 Q23 29 29.8 27"/><path d="M15.8 31 Q23 33 30.2 31"/><path d="M16 35 Q23 37 30 35"/></g>
+  <path d="M17.6 24 H28.4 V33 H17.6 Z" fill="#6B2E63"/><path d="M17.6 24 H23 V33 H17.6 Z" fill="#E0B24A"/>
+  <path d="M12 22 Q12 6 23 5 Q34 6 34 22 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M23 5 V22" stroke="#9AA2AC" stroke-width="1.2"/>
+  <path d="M15.6 9.6 Q14 15 14.4 22 M30.4 9.6 Q32 15 31.6 22" stroke="#9AA2AC" stroke-width="1" fill="none"/>
+  <path d="M12 22 H34" stroke="#241C36" stroke-width="1.4"/>
+  <g fill="none" stroke="#C08A5E" stroke-width="1.5" stroke-linecap="round">
+    <path d="M22 5.4 Q19 1.6 15 2.4"/><path d="M23 5 Q23 .6 26.4 1"/><path d="M24 5.4 Q27.4 1.8 31 3"/>
+  </g>
+  <circle cx="19.4" cy="14.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="26.6" cy="14.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="19.9" cy="14.6" r="1.5" fill="#140F1F"/><circle cx="27.1" cy="14.6" r="1.5" fill="#140F1F"/>
+  <circle cx="23" cy="19.4" r="1.6" fill="#241C36"/>
+  <path d="M25 19.4 L38 15" stroke="#E0B24A" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M36 12 L44 9 L44 21 L36 18 Z" fill="#E0B24A" stroke="#241C36" stroke-width="1.1" stroke-linejoin="round"/>
+  <path d="M30 17.2 L33 25 M32 16.6 L37 22" stroke="#C08A5E" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M31 16.6 L31 26 L36 22.6 Z" fill="#B0392C" stroke="#241C36" stroke-width=".9" stroke-linejoin="round"/>
+</svg>`;
+const PERCEBAL_HERMANOS = `<svg viewBox="0 0 46 48" aria-hidden="true">
+  <ellipse cx="23" cy="45.4" rx="17" ry="2" fill="#140F1F" opacity=".45"/>
+  <path d="M4 44 Q23 36 42 44 L42 46 H4 Z" fill="#9AA2AC" stroke="#241C36" stroke-width="1.2" stroke-linejoin="round"/>
+  <g>
+    <path d="M6 41 Q4 32 7 26 L15 26 Q17 32 15 41 Z" fill="#4A3838" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M4 26 Q4 15 11 14.6 Q18 15 18 26 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M11 14.6 V26 M4 26 H18" stroke="#9AA2AC" stroke-width="1"/>
+    <circle cx="8.6" cy="20.6" r="2.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1"/><circle cx="13.4" cy="20.6" r="2.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1"/>
+    <circle cx="9" cy="20.8" r="1" fill="#140F1F"/><circle cx="13.8" cy="20.8" r="1" fill="#140F1F"/>
+    <path d="M31 41 Q29 32 32 26 L40 26 Q42 32 40 41 Z" fill="#4A3838" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M29 26 Q29 15 36 14.6 Q43 15 43 26 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M36 14.6 V26 M29 26 H43" stroke="#9AA2AC" stroke-width="1"/>
+    <circle cx="33.6" cy="20.6" r="2.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1"/><circle cx="38.4" cy="20.6" r="2.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1"/>
+    <circle cx="34" cy="20.8" r="1" fill="#140F1F"/><circle cx="38.8" cy="20.8" r="1" fill="#140F1F"/>
+  </g>
+  <path d="M17 42 Q14 30 17 20 L29 20 Q32 30 29 42 Z" fill="#4A3838" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <g stroke="#241C36" stroke-width=".9" fill="none" opacity=".6"><path d="M16.2 26 Q23 28 29.8 26"/><path d="M15.8 31 Q23 33 30.2 31"/><path d="M16 36 Q23 38 30 36"/></g>
+  <path d="M12 20 Q12 4 23 3 Q34 4 34 20 Z" fill="#E4E8EC" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M23 3 V20" stroke="#9AA2AC" stroke-width="1.2"/>
+  <path d="M15.6 7.6 Q14 13 14.4 20 M30.4 7.6 Q32 13 31.6 20" stroke="#9AA2AC" stroke-width="1" fill="none"/>
+  <path d="M12 20 H34" stroke="#241C36" stroke-width="1.4"/>
+  <g fill="none" stroke="#C08A5E" stroke-width="1.5" stroke-linecap="round"><path d="M22 3.4 Q19 -.4 15 .4"/><path d="M24 3.4 Q27.4 -.2 31 1"/></g>
+  <circle cx="19.4" cy="12.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="26.6" cy="12.4" r="3.2" fill="#f2f6fb" stroke="#241C36" stroke-width="1.2"/>
+  <circle cx="19.9" cy="12.6" r="1.5" fill="#140F1F"/><circle cx="27.1" cy="12.6" r="1.5" fill="#140F1F"/>
+  <path d="M19 17.2 Q23 19.4 27 17.2" fill="none" stroke="#241C36" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M28 4 Q31 0 34.6 1.6 Q31.6 3.4 29.4 6.2 Z" fill="#B0392C" stroke="#241C36" stroke-width="1" stroke-linejoin="round"/>
+</svg>`;
+$('caraCachalote').innerHTML = CARA_CACHALOTE;
+$('caraPercebal').innerHTML = CARA_PERCEBAL;
+
+const Ruido = (() => {
+  let ctx = null;
+  const ac = () => { try{ if(!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); return ctx; }catch(e){ return null; } };
+  const on = () => AJ.sonido === 'si';
+  const tono = (f, dur, vol = .08, tipo = 'sine', t0 = 0, f2) => {
+    const c = ac(); if(!c || !on()) return;
+    const o = c.createOscillator(), g = c.createGain();
+    o.type = tipo; o.frequency.setValueAtTime(f, c.currentTime + t0);
+    if(f2) o.frequency.exponentialRampToValueAtTime(f2, c.currentTime + t0 + dur);
+    g.gain.setValueAtTime(0, c.currentTime + t0);
+    g.gain.linearRampToValueAtTime(vol, c.currentTime + t0 + .01);
+    g.gain.exponentialRampToValueAtTime(.0001, c.currentTime + t0 + dur);
+    o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + dur + .02);
+  };
+  const ruido = (dur, vol, t0 = 0, f = 1800) => {
+    const c = ac(); if(!c || !on()) return;
+    const n = Math.floor(c.sampleRate * dur), b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0);
+    for(let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n);
+    const s = c.createBufferSource(), g = c.createGain(), fl = c.createBiquadFilter();
+    s.buffer = b; fl.type = 'bandpass'; fl.frequency.value = f; g.gain.value = vol;
+    s.connect(fl); fl.connect(g); g.connect(c.destination); s.start(c.currentTime + t0);
+  };
+  return {
+    despierta(){ const c = ac(); if(c && c.state === 'suspended') c.resume(); },
+    dado(k = 1){ const n = Math.min(6, 2 + k); for(let i = 0; i < n; i++) ruido(.05, .12, i * .07, 2400 + Math.random() * 1200); },
+    trompeta(){ tono(392, .18, .07, 'sawtooth'); tono(392, .14, .07, 'sawtooth', .2); tono(523, .42, .08, 'sawtooth', .36); },
+    lanza(){ ruido(.18, .3, 0, 900); tono(90, .25, .12, 'square', 0, 40); },
+    soplo(){ ruido(.5, .18, 0, 1200); tono(300, .4, .03, 'sine', 0, 700); },
+    oca(){ tono(420, .16, .09, 'sawtooth', 0, 380); tono(500, .22, .09, 'sawtooth', .2, 440); },
+    moneda(){ tono(2200, .08, .05, 'triangle'); tono(3300, .12, .04, 'triangle', .05); },
+    bien(){ tono(523, .14, .07, 'triangle'); tono(784, .22, .06, 'triangle', .1); },
+    mal(){ tono(150, .22, .1, 'square'); },
+    asciende(){ this.trompeta(); }
+  };
+})();
+
+const AJ = {vista:'normal', tema:'sable', texto:'normal', fuente:'legible', movimiento:'normal', sonido:'si', lang:'es', azar:false};
+const AJ_OPS = {
+  vista:     {etq:'vista',       ops:[['normal','normal'], ['aula','aula · pizarra']]},
+  tema:      {etq:'campo',       ops:[['sable','de sable'], ['pergamino','de pergamino · proyector']]},
+  texto:     {etq:'texto',       ops:[['normal','normal'], ['grande','grande']]},
+  fuente:    {etq:'tipografía',  ops:[['legible','legible'], ['inscripcion','gótica']]},
+  movimiento:{etq:'movimiento',  ops:[['normal','normal'], ['menos','menos']]},
+  sonido:    {etq:'sonido',      ops:[['si','sí'], ['no','no']]},
+  lang:      {etq:'idioma',      ops:[['es','castellano'], ['va','valencià · pronto']]}
+};
+function aplicaAjustes(){
+  const r = document.documentElement;
+  document.body.dataset.aula = AJ.vista === 'aula' ? 'si' : 'no';
+  if(window.pintaAula) pintaAula();
+  r.dataset.tema = AJ.tema; r.dataset.texto = AJ.texto; r.dataset.fuente = AJ.fuente; r.dataset.movimiento = AJ.movimiento;
+  document.querySelectorAll('#aj button').forEach(b => b.setAttribute('aria-pressed', String(AJ[b.dataset.k] === b.dataset.v)));
+}
+function pintaAjustes(){
+  const c = $('aj'); c.innerHTML = '';
+  Object.entries(AJ_OPS).forEach(([k, o]) => {
+    const e = document.createElement('span'); e.className = 'etq'; e.textContent = o.etq; c.appendChild(e);
+    const w = document.createElement('div'); w.className = 'ops2';
+    o.ops.forEach(([v, t]) => {
+      const b = document.createElement('button'); b.textContent = t; b.dataset.k = k; b.dataset.v = v;
+      if(k === 'lang' && v === 'va') b.disabled = true;
+      b.addEventListener('click', () => { AJ[k] = v; aplicaAjustes(); Ruido.despierta(); guardaTurno(); });
+      w.appendChild(b);
+    });
+    c.appendChild(w);
+  });
+  aplicaAjustes();
+}
+
+function tira(donde, valores, lee, pon, rotula = v => typeof v === 'number' ? cifra(v, 2) : v, clase = 'n'){
+  const c = $(donde); c.innerHTML = '';
+  valores.forEach(v => {
+    const b = document.createElement('button'); b.className = clase; b.textContent = rotula(v);
+    b.setAttribute('aria-pressed', String(lee() === v));
+    b.addEventListener('click', () => pon(v));
+    c.appendChild(b);
+  });
+}
+
+const ESMALTE = {gules:'var(--gules)', azur:'var(--azur)', sinople:'var(--sinople)', purpura:'var(--purpura)', plata:'var(--plata)', oro:'var(--oro)'};
+function escudo(g, x, y, w, campo, figura, extra = {}){
+  const h = w * 1.15, s = w / 40;
+  const gg = el(g, 'g', Object.assign({transform:'translate(' + x + ' ' + y + ') scale(' + s + ')'}, extra));
+  const forma = 'M3 3 H37 V24 Q37 40 20 44 Q3 40 3 24 Z';
+  el(gg, 'path', {d:forma, fill:ESMALTE[campo] || campo, stroke:'var(--hueco)', 'stroke-width':2, 'stroke-linejoin':'round'});
+  const metal = campo === 'gules' || campo === 'purpura' || campo === 'sinople' ? 'var(--oro)' : 'var(--pergamino)';
+  if(figura === 'banda') el(gg, 'path', {d:'M3 3 L37 24 V32 L3 11 Z', fill:metal});
+  else if(figura === 'cruz') el(gg, 'path', {d:'M16 3 H24 V17 H37 V25 H24 V44 Q20 45 16 44 V25 H3 V17 H16 Z', fill:metal});
+  else if(figura === 'estrella') el(gg, 'path', {d:'M20 8 L23.5 18 H34 L25.5 24.5 L29 35 L20 28.5 L11 35 L14.5 24.5 L6 18 H16.5 Z', fill:metal});
+  else if(figura === 'ondas'){ const o = el(gg, 'g', {fill:'none', stroke:metal, 'stroke-width':3, 'stroke-linecap':'round'});
+    el(o, 'path', {d:'M7 16 Q13 11 20 16 Q27 21 33 16'}); el(o, 'path', {d:'M7 26 Q13 21 20 26 Q27 31 33 26'}); el(o, 'path', {d:'M9 35 Q14 30 20 35 Q26 40 31 35'}); }
+  else if(figura === 'corona') el(gg, 'path', {d:'M8 30 L8 16 L14 22 L20 12 L26 22 L32 16 L32 30 Z', fill:metal});
+  if(extra.borde) el(gg, 'path', {d:forma, fill:'none', stroke:extra.borde, 'stroke-width':3.2, 'stroke-linejoin':'round'});
+  return {gg, h};
+}
+const PUNTOS = {1:[[0,0]], 2:[[-1,-1],[1,1]], 3:[[-1,-1],[0,0],[1,1]], 4:[[-1,-1],[1,-1],[-1,1],[1,1]], 5:[[-1,-1],[1,-1],[0,0],[-1,1],[1,1]], 6:[[-1,-1],[1,-1],[-1,0],[1,0],[-1,1],[1,1]]};
+function dado(g, x, y, lado, n, col = 'var(--pergamino)', puntos = 'var(--sable)', extra = {}){
+  const gg = el(g, 'g', extra);
+  el(gg, 'rect', {x, y, width:lado, height:lado, rx:lado * .18, fill:col, stroke:'var(--figuraO)', 'stroke-width':1.4});
+  if(n) PUNTOS[n].forEach(([a, b]) => el(gg, 'circle', {cx:x + lado / 2 + a * lado * .27, cy:y + lado / 2 + b * lado * .27, r:lado * .085, fill:puntos}));
+  return gg;
+}
+
+const CABALLEROS = [
+  {nom:'Cachalote', campo:'azur', fig:'ondas'},
+  {nom:'Galván', campo:'gules', fig:'estrella'}, {nom:'Tristán', campo:'sinople', fig:'banda'},
+  {nom:'Galaz', campo:'gules', fig:'cruz'}, {nom:'Keu', campo:'purpura', fig:'banda'},
+  {nom:'Bors', campo:'azur', fig:'cruz'}, {nom:'Gareth', campo:'sinople', fig:'estrella'}, {nom:'Ivaín', campo:'gules', fig:'banda'}
+];
+const sorteo = {n:8, sacado:null};
+const rivales = () => CABALLEROS.slice(1, sorteo.n);
+function pintaSorteo(){
+  const g = $('svgSorteo'); g.innerHTML = '';
+  const R = rivales();
+  gotica(g, 12, 24, 'el sorteo · ' + sorteo.n + ' caballeros, ' + R.length + ' posibles para Cachalote');
+  escudo(g, 24, 60, 64, 'azur', 'ondas');
+  txt(g, 56, 150, 'Cachalote', {'text-anchor':'middle', 'font-size':11.5, fill:'var(--tinta)'});
+  txt(g, 56, 164, 'del Lago', {'text-anchor':'middle', 'font-size':11.5, fill:'var(--tinta)'});
+  const y = el(g, 'g', {id:'yelmoSorteo', transform:'translate(150 70)'});
+  el(y, 'path', {d:'M0 40 Q0 10 30 10 Q60 10 60 40 V58 H0 Z', fill:'var(--figura)', 'fill-opacity':.9, stroke:'var(--figuraO)', 'stroke-width':1.5, 'stroke-linejoin':'round'});
+  el(y, 'path', {d:'M4 44 H56 M8 50 H52', stroke:'var(--hueco)', 'stroke-width':1.6});
+  el(y, 'path', {d:'M30 10 Q40 -4 48 2 Q38 4 34 12 Z', fill:'var(--gules)', stroke:'var(--figuraO)', 'stroke-width':1});
+  txt(g, 180, 150, 'el yelmo', {'text-anchor':'middle', 'font-size':11});
+  txt(g, 180, 164, sorteo.sacado === null ? 'con ' + R.length + ' nombres' : 'ya ha salido uno', {'text-anchor':'middle', 'font-size':11});
+  const x0 = 250, w = 34, dx = 68, filas = R.length > 4 ? 2 : 1, porFila = Math.ceil(R.length / filas);
+  R.forEach((c, i) => {
+    const f = Math.floor(i / porFila), col = i % porFila;
+    const x = x0 + col * dx, yy = 46 + f * 110;
+    const gano = sorteo.sacado === i;
+    escudo(g, x, yy, w, c.campo, c.fig, gano ? {borde:'var(--oro)'} : {});
+    txt(g, x + w / 2, yy + w * 1.15 + 14, c.nom, {'text-anchor':'middle', 'font-size':11, fill:gano ? 'var(--oro)' : 'var(--tinta)'});
+    txt(g, x + w / 2, yy + w * 1.15 + 27, '1 de ' + R.length, {'text-anchor':'middle', 'font-size':10, fill:'var(--tenue)'});
+  });
+  if(sorteo.sacado !== null){
+    const c = R[sorteo.sacado];
+    gotica(g, 118, 232, 'contra ' + c.nom, {'text-anchor':'middle', 'font-size':22, fill:'var(--oro)'});
+    txt(g, 118, 250, 'tenía 1 de ' + R.length + ', como los demás', {'text-anchor':'middle', 'font-size':10.5});
+  }
+  txt(g, 12, 288, 'la lista de posibles es el espacio muestral', {'font-size':10.5});
+  txt(g, 528, 288, 'cada nombre, la misma ventura', {'text-anchor':'end', 'font-size':10.5});
+}
+function leeSorteo(){
+  const R = rivales(), n = R.length, s = sorteo.sacado;
+  $('lecSorteo').innerHTML =
+    '<span class="def">El espacio muestral es la lista de todo lo que puede salir. Un suceso es una parte de esa lista. La probabilidad de un suceso es cuántos de la lista lo cumplen partido por cuántos hay, si todos tienen la misma ventura.</span>'
+    + (s === null
+      ? 'Con <b>' + sorteo.n + '</b> caballeros, a Cachalote pueden tocarle <b>' + n + '</b>: ' + R.map(c => c.nom).join(', ') + '. Ésa es la lista, y no hay otra. '
+        + 'Cada nombre tiene <b>1 de ' + n + '</b>, porque el yelmo no sabe leer. «Que le toque alguno de la lista» vale ' + n + ' de ' + n + ': es <b>seguro</b>. «Que le toque él mismo» vale 0 de ' + n + ': es <b>imposible</b>.'
+      : 'Ha salido <b>' + R[s].nom + '</b>. Antes de sacar tenía 1 de ' + n + ', como los demás; después de sacar ya no hay ventura que valga: ha salido. La probabilidad es de <b>antes</b>. '
+        + 'Devuelve el nombre al yelmo y vuelve a sacar: saldrá otro, o el mismo, y la cuenta de antes seguirá siendo 1 de ' + n + '.')
+    + '<span class="cuenta">posibles: ' + n + '   ·   cada uno: 1/' + n + ' = ' + dec(1, n, 3) + '   ·   seguro: ' + n + '/' + n + ' = 1   ·   imposible: 0/' + n + ' = 0</span>';
+}
+function mandosSorteo(){
+  tira('sN', [4, 6, 8], () => sorteo.n, v => { sorteo.n = v; sorteo.sacado = null; Ruido.moneda(); pintaSorteo2(); }, v => String(v));
+  $('sVaciar').disabled = sorteo.sacado === null;
+}
+function pintaSorteo2(){ mandosSorteo(); pintaSorteo(); leeSorteo(); revisa(); }
+$('sSacar').addEventListener('click', () => {
+  Ruido.despierta(); Ruido.dado(3);
+  const y = $('yelmoSorteo'); if(y){ y.classList.add('tiembla'); }
+  setTimeout(() => { sorteo.sacado = al(0, rivales().length - 1); pintaSorteo2(); }, 500);
+});
+$('sVaciar').addEventListener('click', () => { sorteo.sacado = null; pintaSorteo2(); });
+
+const mesa = {dado:'honrado', cuentas:[0, 0, 0, 0, 0, 0], n:0, serie:[], ultimo:null};
+const PESOS_CASA = [3, 2, 2, 2, 2, 1];
+function tiraDado(cual){
+  if(cual === 'honrado') return al(1, 6);
+  let r = al(1, 12); for(let i = 0; i < 6; i++){ r -= PESOS_CASA[i]; if(r <= 0) return i + 1; } return 6;
+}
+function tirarMesa(k){
+  const tope = 10000; k = Math.min(k, tope - mesa.n); if(k <= 0) return;
+  for(let i = 0; i < k; i++){
+    const c = tiraDado(mesa.dado); mesa.cuentas[c - 1]++; mesa.n++; mesa.ultimo = c;
+    if(mesa.n <= 100 || mesa.n % 10 === 0) mesa.serie.push([mesa.n, mesa.cuentas[5] / mesa.n]);
+    if(c === 6 && i > 0 && mesa.dosSeises !== undefined) mesa.dosSeises = null;
+  }
+}
+function pintaMesa(){
+  const g = $('svgMesa'); g.innerHTML = '';
+  const n = mesa.n, honrado = mesa.dado === 'honrado';
+  gotica(g, 12, 24, honrado ? 'el dado honrado · ' + cifra(n, 0) + (n === 1 ? ' tirada' : ' tiradas') : 'el dado de la casa · ' + cifra(n, 0) + (n === 1 ? ' tirada' : ' tiradas'), {fill:honrado ? 'var(--gules)' : 'var(--oro)'});
+  if(mesa.ultimo) dado(g, 462, 8, 44, mesa.ultimo, honrado ? 'var(--pergamino)' : 'var(--sable)', honrado ? 'var(--sable)' : 'var(--pergamino)', {class:'nueva'});
+  else { dado(g, 462, 8, 44, 0); txt(g, 484, 36, '?', {'text-anchor':'middle', 'font-size':18, fill:'var(--tenue)'}); }
+  const x0 = 30, y0 = 230, w = 30, dx = 40, alto = 150;
+  const maxF = Math.max(1 / 3, ...mesa.cuentas.map(c => n ? c / n : 0));
+  const Y = f => y0 - f / maxF * alto;
+  el(g, 'line', {x1:x0 - 8, y1:Y(1/6), x2:x0 + 6 * dx - 4, y2:Y(1/6), stroke:'var(--oro)', 'stroke-width':1.5, 'stroke-dasharray':'5 4'});
+  txt(g, x0 + 6 * dx, Y(1/6) + 4, '1/6', {fill:'var(--oro)', 'font-size':11.5});
+  for(let i = 0; i < 6; i++){
+    const f = n ? mesa.cuentas[i] / n : 0, x = x0 + i * dx;
+    el(g, 'rect', {x, y:Y(f), width:w, height:y0 - Y(f), fill:i === 5 ? 'var(--gules)' : 'var(--figura)', 'fill-opacity':i === 5 ? .95 : .55, stroke:'none'});
+    if(n) txt(g, x + w / 2, Y(f) - 5, mesa.cuentas[i], {'text-anchor':'middle', 'font-size':10.5, fill:'var(--tinta)'});
+    dado(g, x + 4, y0 + 8, 22, i + 1, 'var(--pergamino)', 'var(--sable)');
+  }
+  el(g, 'line', {x1:x0 - 8, y1:y0, x2:x0 + 6 * dx - 4, y2:y0, stroke:'var(--linea)', 'stroke-width':1});
+  txt(g, x0, y0 + 48, 'veces que ha salido cada cara', {'font-size':10.5});
+  const cx0 = 318, cy0 = 200, cw = 186, ch = 120, N = Math.max(10, n);
+  el(g, 'rect', {x:cx0, y:cy0 - ch, width:cw, height:ch, fill:'none', stroke:'var(--linea)', 'stroke-width':1});
+  el(g, 'line', {x1:cx0, y1:cy0 - ch * (1/6) / .5, x2:cx0 + cw, y2:cy0 - ch * (1/6) / .5, stroke:'var(--oro)', 'stroke-width':1.5, 'stroke-dasharray':'5 4'});
+  txt(g, cx0 + cw + 4, cy0 - ch * (1/6) / .5 + 4, '1/6', {fill:'var(--oro)', 'font-size':11});
+  txt(g, cx0 - 4, cy0 - ch + 10, '0,5', {'text-anchor':'end', 'font-size':10.5}); txt(g, cx0 - 4, cy0 + 4, '0', {'text-anchor':'end', 'font-size':10.5});
+  if(mesa.serie.length){
+    const pts = mesa.serie.map(([k, f]) => (cx0 + k / N * cw).toFixed(1) + ',' + (cy0 - Math.min(f, .5) / .5 * ch).toFixed(1)).join(' ');
+    el(g, 'polyline', {points:pts, fill:'none', stroke:'var(--gules)', 'stroke-width':1.8, 'stroke-linejoin':'round'});
+    const [kf, ff] = mesa.serie[mesa.serie.length - 1];
+    el(g, 'circle', {cx:cx0 + kf / N * cw, cy:cy0 - Math.min(ff, .5) / .5 * ch, r:3.5, fill:'var(--gules)'});
+  }
+  txt(g, cx0 + cw / 2, cy0 + 16, 'frecuencia del seis, tirada a tirada', {'text-anchor':'middle', 'font-size':10.5});
+  txt(g, cx0 + cw / 2, cy0 + 30, n ? '6 ha salido ' + mesa.cuentas[5] + ' de ' + cifra(n, 0) + ' · ' + dec(mesa.cuentas[5], n, 3) : 'aún no se ha tirado', {'text-anchor':'middle', 'font-size':11.5, fill:'var(--tinta)'});
+  const t = dado(g, 6, 282, 16, 3, 'var(--panel2)', 'var(--tenue)', {class:'tercerDado', style:'cursor:pointer', role:'button', 'aria-label':'Un dado debajo de la mesa'});
+  t.addEventListener('click', e => { e.stopPropagation(); abreVetula('el tercer dado'); });
+  txt(g, 528, 288, 'la raya de oro es la cuenta de antes', {'text-anchor':'end', 'font-size':10.5});
+}
+function leeMesa(){
+  const n = mesa.n, s = mesa.cuentas[5], honrado = mesa.dado === 'honrado';
+  $('lecMesa').innerHTML =
+    '<span class="def">La frecuencia relativa de un suceso es las veces que ha salido partido por las veces que se ha tirado. Es lo que se ve. La probabilidad es lo que se cuenta antes de tirar. No son la misma cosa.</span>'
+    + (n === 0 ? 'La mesa está vacía. Tira, y cuenta los seises.'
+      : honrado
+        ? 'En <b>' + cifra(n, 0) + '</b> tiradas el seis ha salido <b>' + s + '</b> veces: frecuencia ' + s + '/' + cifra(n, 0) + ' = <b>' + dec(s, n, 3) + '</b>. La probabilidad, contada antes de tirar, es 1/6 = 0,167, porque el dado tiene seis caras iguales y una es el seis. '
+          + (n < 30 ? 'Con tan pocas tiradas la frecuencia salta de un lado a otro: mira la línea. Tira más.' : n < 500 ? 'Ya se acerca, y aún se mueve. Con mil, se calma.' : 'Se ha puesto al lado de un sexto y ya no se aleja mucho. Nunca llega del todo, y no tiene por qué: es una frecuencia, no una probabilidad.')
+        : 'Es <b>el dado de la casa</b>, y está cargado. En ' + cifra(n, 0) + ' tiradas el seis ha salido ' + s + ' veces: frecuencia <b>' + dec(s, n, 3) + '</b>. La cuenta de Laplace aquí <b>no vale</b>: las caras no tienen la misma ventura, y no hay nada que contar. Solo queda tirar y mirar. ' + (n >= 300 ? 'Con tantas tiradas ya se ve dónde se queda: cerca de un doceavo, que es lo que la casa le dejó al seis.' : 'Tira mil veces y verás dónde se queda.'))
+    + '<span class="cuenta">' + (honrado ? 'probabilidad 1/6 = 0,167   ·   frecuencia ' + (n ? s + '/' + cifra(n, 0) + ' = ' + dec(s, n, 3) : '—') : 'probabilidad: no se puede contar   ·   frecuencia ' + (n ? s + '/' + cifra(n, 0) + ' = ' + dec(s, n, 3) : '—')) + '</span>';
+}
+function mandosMesa(){
+  tira('mDado', ['honrado', 'cargado'], () => mesa.dado, v => { if(mesa.dado !== v){ mesa.dado = v; vaciaMesa(); if(v === 'cargado') azzahr(); } pintaMesa2(); }, v => v === 'honrado' ? 'el honrado' : 'el de la casa', 'n v');
+  tira('mTirar', [1, 10, 100, 1000], () => null, v => { Ruido.despierta(); Ruido.dado(v > 1 ? 4 : 1); tirarMesa(v); pintaMesa2(); if(v === 1) dosSeises(); }, v => '× ' + cifra(v, 0));
+}
+function vaciaMesa(){ mesa.cuentas = [0, 0, 0, 0, 0, 0]; mesa.n = 0; mesa.serie = []; mesa.ultimo = null; }
+function pintaMesa2(){ mandosMesa(); pintaMesa(); leeMesa(); revisa(); }
+$('mVaciar').addEventListener('click', () => { vaciaMesa(); pintaMesa2(); });
+
+const SUCESOS_DD = {
+  suma7: {nom:'suma siete', f:(a, b) => a + b === 7},
+  suma2: {nom:'suma dos', f:(a, b) => a + b === 2},
+  suma12:{nom:'suma doce', f:(a, b) => a + b === 12},
+  doble: {nom:'doble', f:(a, b) => a === b},
+  unSeis:{nom:'al menos un seis', f:(a, b) => a === 6 || b === 6},
+  diez:  {nom:'suma diez o más', f:(a, b) => a + b >= 10}
+};
+const casillas = k => { let c = 0; for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++) if(SUCESOS_DD[k].f(a, b)) c++; return c; };
+const dados = {suceso:'suma7', n:0, hits:0, ultimo:null};
+function tirarDados(k){
+  const tope = 10000; k = Math.min(k, tope - dados.n); if(k <= 0) return;
+  for(let i = 0; i < k; i++){ const a = al(1, 6), b = al(1, 6); dados.n++; if(SUCESOS_DD[dados.suceso].f(a, b)) dados.hits++; dados.ultimo = [a, b]; }
+}
+function pintaTabla36(g, x0, y0, c, marca, extra = {}){
+  for(let i = 1; i <= 6; i++){
+    dado(g, x0 + (i - 1) * c + 4, y0 - c + 6, c - 8, i, 'var(--pergamino)', 'var(--gulesO)');
+    dado(g, x0 - c + 6, y0 + (i - 1) * c + 4, c - 8, i, 'var(--pergamino)', 'var(--azurO)');
+  }
+  for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++){
+    const on = marca(a, b);
+    el(g, 'rect', {x:x0 + (a - 1) * c, y:y0 + (b - 1) * c, width:c, height:c, fill:on ? 'var(--gules)' : 'none', stroke:'var(--linea)', 'stroke-width':.8, class:on ? 'nueva' : ''});
+    if(extra.suma !== false) txt(g, x0 + (a - 1) * c + c / 2, y0 + (b - 1) * c + c / 2 + 4.5, a + b, {'text-anchor':'middle', 'font-size':12, fill:on ? 'var(--acentoT)' : 'var(--tenue)', 'font-weight':on ? 700 : 400});
+  }
+}
+function pintaDados(){
+  const g = $('svgDados'); g.innerHTML = '';
+  const S = SUCESOS_DD[dados.suceso], c = casillas(dados.suceso);
+  gotica(g, 12, 24, S.nom + ' · ' + c + ' casillas de 36');
+  pintaTabla36(g, 70, 70, 36, S.f);
+  txt(g, 178, 302, 'el dado rojo', {'text-anchor':'middle', 'font-size':10.5, fill:'var(--gules)'});
+  txt(g, 18, 178, 'el dado azul', {'text-anchor':'middle', 'font-size':10.5, fill:'var(--azur)', transform:'rotate(-90 18 178)'});
+  const x = 320;
+  txt(g, x, 70, 'la cuenta de antes', {'font-size':10.5});
+  gotica(g, x, 96, frac(c, 36) + ' = ' + dec(c, 36, 3), {'font-size':21, fill:'var(--oro)'});
+  txt(g, x, 130, 'la cuenta de después', {'font-size':10.5});
+  gotica(g, x, 156, dados.n ? dados.hits + ' de ' + cifra(dados.n, 0) + ' = ' + dec(dados.hits, dados.n, 3) : 'aún no se ha tirado', {'font-size':dados.n ? 21 : 15, fill:'var(--tinta)'});
+  if(dados.ultimo){
+    dado(g, x, 190, 44, dados.ultimo[0], 'var(--pergamino)', 'var(--gulesO)', {class:'nueva'});
+    dado(g, x + 54, 190, 44, dados.ultimo[1], 'var(--pergamino)', 'var(--azurO)', {class:'nueva'});
+    txt(g, x + 120, 218, 'suma ' + (dados.ultimo[0] + dados.ultimo[1]) + (S.f(...dados.ultimo) ? ' · ¡sale!' : ' · no'), {'font-size':12, fill:S.f(...dados.ultimo) ? 'var(--oro)' : 'var(--tenue)'});
+  }
+  txt(g, 528, 310, 'seis caras por seis caras: treinta y seis', {'text-anchor':'end', 'font-size':10.5});
+}
+function leeDados(){
+  const S = SUCESOS_DD[dados.suceso], c = casillas(dados.suceso), n = dados.n, h = dados.hits;
+  $('lecDados').innerHTML =
+    '<span class="def">Dos dados no se hablan: lo que saca uno no cambia lo que saca el otro. Por eso cada cara del rojo va con cada cara del azul, y los casos son seis por seis, treinta y seis, todos con la misma ventura.</span>'
+    + '«<b>' + S.nom + '</b>» ocupa <b>' + c + '</b> casillas de las treinta y seis: ' + frac(c, 36) + '. '
+    + (dados.suceso === 'suma7' ? 'Es la diagonal larga: el siete se hace de seis maneras, una por cada cara del rojo. Por eso sale más que ningún otro. '
+      : dados.suceso === 'suma12' || dados.suceso === 'suma2' ? 'Solo hay una manera: los dos dados tienen que sacar lo mismo, y lo mismo justo. Por eso sale tan poco. '
+      : dados.suceso === 'doble' ? 'Los dobles son la otra diagonal: uno por cara. Seis, como el siete, aunque no lo parezca. '
+      : dados.suceso === 'unSeis' ? 'La última fila y la última columna: once casillas, no doce, porque el doble seis está en las dos y se cuenta una vez. '
+      : 'La esquina de abajo a la derecha: seis casillas. ')
+    + (n ? 'Tirando ' + cifra(n, 0) + ' veces ha salido ' + h + ': frecuencia ' + dec(h, n, 3) + ', contra ' + dec(c, 36, 3) + ' de la cuenta. ' + (n >= 360 ? 'Cerca, como tiene que ser.' : 'Tira más y mira si se acercan.') : 'Tira y compara la cuenta de antes con la de después.')
+    + '<span class="cuenta">casillas ' + c + ' de 36   ·   ' + frac(c, 36) + ' = ' + dec(c, 36, 3) + (n ? '   ·   frecuencia ' + h + '/' + cifra(n, 0) + ' = ' + dec(h, n, 3) : '') + '</span>';
+}
+function mandosDados(){
+  tira('dSuceso', Object.keys(SUCESOS_DD), () => dados.suceso, v => { dados.suceso = v; dados.n = 0; dados.hits = 0; dados.ultimo = null; Ruido.moneda(); pintaDados2(); }, v => SUCESOS_DD[v].nom, 'n v');
+  tira('dTirar', [1, 36, 360], () => null, v => { Ruido.despierta(); Ruido.dado(v > 1 ? 4 : 2); tirarDados(v); pintaDados2(); }, v => '× ' + v);
+}
+function pintaDados2(){ mandosDados(); pintaDados(); leeDados(); revisa(); }
+$('dVaciar').addEventListener('click', () => { dados.n = 0; dados.hits = 0; dados.ultimo = null; pintaDados2(); });
+
+const ESCUDOS = [
+  {nom:'Galván', campo:'gules', fig:'cruz'}, {nom:'Galaz', campo:'gules', fig:'cruz'}, {nom:'Bors', campo:'gules', fig:'cruz'},
+  {nom:'Tristán', campo:'gules', fig:'estrella'}, {nom:'Keu', campo:'gules', fig:'estrella'}, {nom:'Gareth', campo:'gules', fig:'estrella'},
+  {nom:'Ivaín', campo:'azur', fig:'cruz'}, {nom:'Lamorac', campo:'azur', fig:'cruz'}, {nom:'Pelinor', campo:'azur', fig:'cruz'},
+  {nom:'Bedivere', campo:'azur', fig:'estrella'}, {nom:'Sagramor', campo:'azur', fig:'estrella'}, {nom:'Dagonet', campo:'azur', fig:'estrella'}
+];
+const SUCESOS_H = {
+  gules:          {nom:'gules', f:e => e.campo === 'gules'},
+  estrella:       {nom:'estrella', f:e => e.fig === 'estrella'},
+  gulesOestrella: {nom:'gules o estrella', f:e => e.campo === 'gules' || e.fig === 'estrella'},
+  gulesYestrella: {nom:'gules y estrella', f:e => e.campo === 'gules' && e.fig === 'estrella'},
+  noGules:        {nom:'no gules', f:e => e.campo !== 'gules'},
+  gulesYazur:     {nom:'gules y azur', f:e => e.campo === 'gules' && e.campo === 'azur'}
+};
+const cuentaH = k => ESCUDOS.filter(SUCESOS_H[k].f).length;
+const her = {suceso:'gules', sacado:null};
+function pintaHeraldica(){
+  const g = $('svgHeraldica'); g.innerHTML = '';
+  const S = SUCESOS_H[her.suceso], c = cuentaH(her.suceso);
+  gotica(g, 12, 24, S.nom + ' · ' + c + ' escudos de 12');
+  const x0 = 96, y0 = 60, cw = 176, chh = 108;
+  txt(g, x0 + cw / 2, 50, 'cruz', {'text-anchor':'middle', 'font-size':11.5, fill:'var(--tinta)'});
+  txt(g, x0 + cw * 1.5, 50, 'estrella', {'text-anchor':'middle', 'font-size':11.5, fill:'var(--tinta)'});
+  txt(g, x0 - 10, y0 + chh / 2 + 4, 'gules', {'text-anchor':'end', 'font-size':11.5, fill:'var(--gules)'});
+  txt(g, x0 - 10, y0 + chh * 1.5 + 4, 'azur', {'text-anchor':'end', 'font-size':11.5, fill:'var(--azur)'});
+  for(let i = 0; i <= 2; i++){ el(g, 'line', {x1:x0 + i * cw, y1:y0, x2:x0 + i * cw, y2:y0 + 2 * chh, stroke:'var(--linea)', 'stroke-width':1}); el(g, 'line', {x1:x0, y1:y0 + i * chh, x2:x0 + 2 * cw, y2:y0 + i * chh, stroke:'var(--linea)', 'stroke-width':1}); }
+  ESCUDOS.forEach((e, i) => {
+    const fila = e.campo === 'gules' ? 0 : 1, col = e.fig === 'cruz' ? 0 : 1, k = i % 3;
+    const x = x0 + col * cw + 14 + k * 54, y = y0 + fila * chh + 14;
+    const on = S.f(e), sac = her.sacado === i;
+    const {gg} = escudo(g, x, y, 40, e.campo, e.fig, sac ? {borde:'var(--oro)'} : {});
+    if(!on) gg.setAttribute('opacity', '.28');
+    txt(g, x + 20, y + 46 + 14, e.nom, {'text-anchor':'middle', 'font-size':9.5, fill:sac ? 'var(--oro)' : on ? 'var(--tinta)' : 'var(--tenue)'});
+  });
+  if(her.sacado !== null){ const e = ESCUDOS[her.sacado]; gotica(g, 270, 292, 'ha salido ' + e.nom + ', ' + e.campo + ' con ' + e.fig + (S.f(e) ? ' · cumple' : ' · no cumple'), {'text-anchor':'middle', 'font-size':16, fill:'var(--oro)'}); }
+  else txt(g, 270, 292, 'tres por casilla · doce escudos · la tabla es de doble entrada', {'text-anchor':'middle', 'font-size':10.5});
+}
+function leeHeraldica(){
+  const k = her.suceso, S = SUCESOS_H[k], c = cuentaH(k);
+  const cuerpo = {
+    gules: 'Seis escudos con campo gules de doce: <b>la mitad</b>. Se cuentan en la fila de arriba.',
+    estrella: 'Seis con estrella de doce: la mitad. Se cuentan en la columna de la derecha.',
+    gulesOestrella: '«Gules <b>o</b> estrella» es la fila de gules junta con la columna de estrella: <b>nueve</b> escudos, y no doce. Seis más seis serían doce, pero los tres de gules con estrella están en las dos cuentas y solo son tres escudos. Se cuentan escudos; no se suman probabilidades.',
+    gulesYestrella: '«Gules <b>y</b> estrella» es la casilla donde se cruzan: <b>tres</b>. Los que cumplen las dos cosas a la vez.',
+    noGules: '«<b>No</b> gules» es todo lo que no está en la fila de gules: los seis de azur. La probabilidad del contrario es uno menos la del suceso: 1 − 6/12 = 6/12.',
+    gulesYazur: '«Gules <b>y</b> azur» no lo cumple ningún escudo: un campo es de un solo esmalte. Son sucesos <b>incompatibles</b>: no pueden pasar a la vez, y su probabilidad juntos es cero. «Gules y estrella», en cambio, sí pueden: son compatibles.'
+  }[k];
+  $('lecHeraldica').innerHTML =
+    '<span class="def">«O» junta dos sucesos; «y» se queda con los que cumplen los dos; «no» es todo lo demás. Se cuenta en la lista. Dos sucesos son incompatibles si no pueden pasar a la vez.</span>'
+    + cuerpo + (her.sacado !== null ? ' Ha salido <b>' + ESCUDOS[her.sacado].nom + '</b>, que ' + (S.f(ESCUDOS[her.sacado]) ? 'cumple' : 'no cumple') + '. Antes de sacar tenía ' + c + ' de 12 de cumplir.' : '')
+    + '<span class="cuenta">' + S.nom + ': ' + c + ' de 12   ·   ' + frac(c, 12) + ' = ' + dec(c, 12, 3) + (k === 'gulesOestrella' ? '   ·   6 + 6 − 3 = 9' : k === 'noGules' ? '   ·   1 − 6/12 = 6/12' : '') + '</span>';
+}
+function mandosHeraldica(){
+  tira('hSuceso', Object.keys(SUCESOS_H), () => her.suceso, v => { her.suceso = v; Ruido.moneda(); pintaHeraldica2(); }, v => SUCESOS_H[v].nom, 'n v');
+}
+function pintaHeraldica2(){ mandosHeraldica(); pintaHeraldica(); leeHeraldica(); revisa(); }
+$('hSacar').addEventListener('click', () => { Ruido.despierta(); Ruido.dado(2); her.sacado = al(0, 11); pintaHeraldica2(); });
+
+const SUCESOS_B = {
+  suma7: {nom:'suma siete', f:(a, b) => a + b === 7},
+  doble: {nom:'doble', f:(a, b) => a === b},
+  suma9: {nom:'suma nueve', f:(a, b) => a + b === 9},
+  suma11:{nom:'suma once', f:(a, b) => a + b === 11},
+  suma12:{nom:'suma doce', f:(a, b) => a + b === 12}
+};
+const casillasB = k => { let c = 0; for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++) if(SUCESOS_B[k].f(a, b)) c++; return c; };
+const pagaJusta = k => 36 / casillasB(k) - 1;
+const PAGAS = [1, 2, 3, 4, 5, 6, 8, 11, 17, 35];
+const banca = {suceso:'suma7', paga:4, rondas:0, ganadas:0, bolsa:0, serie:[0]};
+function jugar(k){
+  const tope = 3600; k = Math.min(k, tope - banca.rondas); if(k <= 0) return;
+  for(let i = 0; i < k; i++){
+    const a = al(1, 6), b = al(1, 6); banca.rondas++;
+    if(SUCESOS_B[banca.suceso].f(a, b)){ banca.ganadas++; banca.bolsa += banca.paga; } else banca.bolsa -= 1;
+    if(banca.rondas <= 100 || banca.rondas % 10 === 0) banca.serie.push(banca.bolsa);
+  }
+}
+function pintaBanca(){
+  const g = $('svgBanca'); g.innerHTML = '';
+  const c = casillasB(banca.suceso), justa = pagaJusta(banca.suceso), r = banca.rondas;
+  gotica(g, 12, 24, 'una moneda a «' + SUCESOS_B[banca.suceso].nom + '» · la casa paga ' + banca.paga);
+  const x0 = 40, y0 = 150, w = 290, h = 110;
+  const serie = banca.serie, N = Math.max(36, r), M = Math.max(12, ...serie.map(Math.abs));
+  el(g, 'line', {x1:x0, y1:y0, x2:x0 + w, y2:y0, stroke:'var(--linea)', 'stroke-width':1});
+  el(g, 'rect', {x:x0, y:y0 - h, width:w, height:2 * h, fill:'none', stroke:'var(--linea)', 'stroke-width':1, 'stroke-dasharray':'3 3'});
+  txt(g, x0 - 6, y0 - h + 10, '+' + M, {'text-anchor':'end', 'font-size':10.5}); txt(g, x0 - 6, y0 + 4, '0', {'text-anchor':'end', 'font-size':10.5}); txt(g, x0 - 6, y0 + h, '−' + M, {'text-anchor':'end', 'font-size':10.5});
+  const pts = serie.map((v, i) => { const k = i < 101 ? i : 100 + (i - 100) * 10; return (x0 + Math.min(k, N) / N * w).toFixed(1) + ',' + (y0 - v / M * h).toFixed(1); }).join(' ');
+  el(g, 'polyline', {points:pts, fill:'none', stroke:banca.bolsa >= 0 ? 'var(--sinople)' : 'var(--gules)', 'stroke-width':2, 'stroke-linejoin':'round'});
+  if(r) el(g, 'circle', {cx:x0 + Math.min(r, N) / N * w, cy:y0 - banca.bolsa / M * h, r:4, fill:banca.bolsa >= 0 ? 'var(--sinople)' : 'var(--gules)'});
+  txt(g, x0 + w / 2, y0 + h + 20, 'tu bolsa, ronda a ronda · ' + cifra(r, 0) + (r === 1 ? ' ronda' : ' rondas'), {'text-anchor':'middle', 'font-size':11});
+  const mx = 366, my = 60;
+  txt(g, mx, my - 18, 'tu bolsa', {'font-size':10.5});
+  gotica(g, mx, my + 8, (banca.bolsa >= 0 ? '+' : '−') + cifra(Math.abs(banca.bolsa), 0) + (Math.abs(banca.bolsa) === 1 ? ' moneda' : ' monedas'), {'font-size':22, fill:banca.bolsa >= 0 ? 'var(--sinople)' : 'var(--gules)'});
+  txt(g, mx, my + 30, 'la casa: ' + (banca.bolsa <= 0 ? '+' : '−') + cifra(Math.abs(banca.bolsa), 0), {'font-size':11.5, fill:'var(--tinta)'});
+  txt(g, mx, my + 62, 'en 36 rondas, por la cuenta', {'font-size':10.5});
+  txt(g, mx, my + 80, 'ganas unas ' + c + ' → +' + c * banca.paga, {'font-size':11.5, fill:'var(--tinta)'});
+  txt(g, mx, my + 96, 'pierdes unas ' + (36 - c) + ' → −' + (36 - c), {'font-size':11.5, fill:'var(--tinta)'});
+  const neto = c * banca.paga - (36 - c);
+  gotica(g, mx, my + 122, (neto > 0 ? '+' : '') + neto + ' para ti', {'font-size':19, fill:neto > 0 ? 'var(--sinople)' : neto < 0 ? 'var(--gules)' : 'var(--oro)'});
+  txt(g, mx, my + 148, 'paga justa: ' + (Number.isInteger(justa) ? justa : cifra(justa, 2)), {'font-size':11.5, fill:'var(--oro)'});
+  txt(g, mx, my + 164, banca.paga < justa ? 'de menos: gana la casa' : banca.paga > justa ? 'de más: ganas tú' : 'justo: nadie gana', {'font-size':10.5, fill:'var(--tenue)'});
+  txt(g, 528, 296, 'a la larga: lo único que le importa a la casa', {'text-anchor':'end', 'font-size':10.5});
+}
+function leeBanca(){
+  const k = banca.suceso, c = casillasB(k), justa = pagaJusta(banca.suceso), p = banca.paga, r = banca.rondas, neto = c * p - (36 - c);
+  $('lecBanca').innerHTML =
+    '<span class="def">Un juego es justo cuando, a la larga, nadie gana ni pierde: lo que la casa paga cuando sale se compensa con lo que cobra cuando no sale. La casa no juega a juegos justos.</span>'
+    + 'Apuestas una moneda a «' + SUCESOS_B[k].nom + '», que ocupa ' + c + ' casillas de 36. En treinta y seis rondas, sale <b>unas ' + c + '</b> veces y no sale unas ' + (36 - c) + '. Cobras ' + c + ' × ' + p + ' = ' + c * p + ' y pierdes ' + (36 - c) + ' monedas: '
+    + (neto < 0 ? 'te faltan <b>' + (-neto) + '</b>. Gana la casa.' : neto > 0 ? 'te sobran <b>' + neto + '</b>. Gana el jugador, y la casa cierra.' : 'quedas <b>en paz</b>. Es justo.')
+    + ' Para que fuera justo la casa tendría que pagar <b>' + (Number.isInteger(justa) ? justa : cifra(justa, 2)) + '</b>: treinta y seis entre ' + c + ', menos la moneda que pusiste. '
+    + (r ? 'Llevas ' + cifra(r, 0) + ' rondas y tu bolsa va en ' + (banca.bolsa >= 0 ? '+' : '') + banca.bolsa + '. ' + (r < 36 ? 'Con pocas rondas puede pasar cualquier cosa: eso es la suerte, y dura poco.' : 'Y a la larga la frecuencia se pone al lado de la probabilidad, así que la cuenta de arriba acaba mandando. Eso es lo que sabe la casa.') : 'Juega treinta y seis rondas y mira la bolsa.')
+    + '<span class="cuenta">gana ' + c + '/36 · paga ' + p + '   ·   en 36 rondas: +' + c * p + ' − ' + (36 - c) + ' = ' + (neto > 0 ? '+' : '') + neto + '   ·   paga justa 36/' + c + ' − 1 = ' + (Number.isInteger(justa) ? justa : cifra(justa, 2)) + '</span>';
+}
+function vaciaBanca(){ banca.rondas = 0; banca.ganadas = 0; banca.bolsa = 0; banca.serie = [0]; }
+function mandosBanca(){
+  tira('bSuceso', Object.keys(SUCESOS_B), () => banca.suceso, v => { banca.suceso = v; vaciaBanca(); Ruido.moneda(); pintaBanca2(); }, v => SUCESOS_B[v].nom + ' · ' + casillasB(v) + '/36', 'n v');
+  tira('bPaga', PAGAS, () => banca.paga, v => { banca.paga = v; vaciaBanca(); Ruido.moneda(); pintaBanca2(); }, v => String(v));
+  tira('bJugar', [1, 36, 360], () => null, v => { Ruido.despierta(); Ruido.dado(v > 1 ? 4 : 2); jugar(v); pintaBanca2(); }, v => '× ' + v);
+}
+function pintaBanca2(){ mandosBanca(); pintaBanca(); leeBanca(); revisa(); }
+$('bVaciar').addEventListener('click', () => { vaciaBanca(); pintaBanca2(); });
+
+const SALAS = {sorteo:'pSorteo', mesa:'pMesa', dados:'pDados', heraldica:'pHeraldica', banca:'pBanca'};
+const LEMAS = {
+  sorteo:   ['El sorteo del torneo', 'la lista de lo que puede salir'],
+  mesa:     ['La mesa de dados', 'lo que se ve contra lo que se cuenta'],
+  dados:    ['Los dos dados', 'seis por seis, treinta y seis'],
+  heraldica:['La heráldica', 'o, y, no: contados en escudos'],
+  banca:    ['La banca de la taberna', 'por qué la casa siempre gana']
+};
+const PINTA = {sorteo:pintaSorteo2, mesa:pintaMesa2, dados:pintaDados2, heraldica:pintaHeraldica2, banca:pintaBanca2};
+function muestraSala(cual){ for(const k in SALAS) $(SALAS[k]).hidden = (k !== cual); PINTA[cual](); }
+
+const ENCARGOS = [
+  {sala:'sorteo', pre(){ Object.assign(sorteo, {n:4, sacado:null}); },
+   t:'Escudero, el torneo es mañana y no sé contra quién justo. <b>Pon ocho caballeros y saca el sorteo del yelmo</b>. Y dime, antes de que salga, a cuántos puede tocarme.',
+   ok: () => sorteo.n === 8 && sorteo.sacado !== null,
+   bien(){ const c = sorteo.sacado !== null && rivales()[sorteo.sacado]; return 'A <b>siete</b>, mi señor: los ocho menos vos, que no vais a justar contra vos mismo. Ésa es la lista entera, y se llama <b>espacio muestral</b>.' + (c ? ' Ha salido <b>' + c.nom + '</b>, pero eso es después; la lista era de antes.' : ' Lo que salga del yelmo es después; la lista es de antes.'); },
+   mal(){ if(sorteo.n !== 8) return 'Sois ' + sorteo.n + ', mi señor. Pedíais ocho.'; return 'Ocho, bien. Ahora sacad del yelmo.'; }},
+  {sala:'sorteo', pre(){ Object.assign(sorteo, {n:8, sacado:null}); },
+   t:'Galván es el mejor con la lanza y prefiero que no me toque. Escudero, ¿qué probabilidad hay de que me toque Galván?',
+   ops:[
+     {t:'Depende de la suerte: no se puede saber.', ok:false, r:'Lo que no se puede saber es <b>quién</b> saldrá. Lo que sí se puede es contar: siete nombres en el yelmo, uno es Galván, ninguno pesa más que otro. Uno de siete. La suerte es lo que pasa después; la cuenta es de antes.'},
+     {t:'Uno de siete: siete nombres en el yelmo y uno es el suyo.', ok:true, r:'Uno de siete, mi señor: 1/7, que son unos 0,14. Es la regla de contar de Laplace: los casos que cumplen partido por los casos que hay, <b>cuando todos tienen la misma ventura</b>. Y la tienen, porque el yelmo no sabe leer. Si supiera, la cuenta no valdría.'},
+     {t:'Uno de ocho: somos ocho caballeros.', ok:false, r:'Ocho sois, pero vos no estáis en vuestro yelmo: nadie justa contra sí mismo. La lista de posibles tiene siete nombres, y la cuenta se hace sobre la lista, no sobre el torneo. Uno de siete.'}
+   ]},
+  {sala:'sorteo', pre(){ Object.assign(sorteo, {n:8, sacado:null}); },
+   t:'Dos apuestas me ofrecen en la taberna: una moneda a que «me toca alguno de la lista» y otra a que «me toco a mí mismo». ¿Cuánto vale cada una?',
+   ops:[
+     {t:'La primera vale siete de siete, que es uno: segura. La segunda, cero de siete: imposible.', ok:true, r:'Eso es. «Alguno de la lista» lo cumplen los siete nombres: 7/7 = 1, es el suceso <b>seguro</b>, y quien os lo apueste os está regalando la moneda. «Vos mismo» no lo cumple ninguno: 0/7 = 0, es el <b>imposible</b>. Todo lo demás está entre cero y uno, y no sale de ahí.'},
+     {t:'Las dos valen lo mismo, que son sucesos y todos valen algo.', ok:false, r:'No todos valen algo: uno vale todo y otro nada. «Alguno de la lista» lo cumplen los siete: 7/7 = 1, seguro. «Vos mismo» no lo cumple ninguno: 0/7 = 0, imposible. Contad en la lista y se ve.'},
+     {t:'La primera vale un séptimo, como cualquier caballero.', ok:false, r:'Un séptimo es «que me toque Galván», que es uno de la lista. «Alguno de la lista» son los siete a la vez: 7/7 = 1. Es el suceso seguro, el que vale uno. Y el imposible vale cero. Los demás, en medio.'}
+   ]},
+  {sala:'mesa', pre(){ mesa.dado = 'honrado'; vaciaMesa(); },
+   t:'A la taberna. Quiero saber cuántas veces sale el seis. <b>Tira el dado diez veces</b>, escudero, y cuéntalos.',
+   ok: () => mesa.dado === 'honrado' && mesa.n >= 10,
+   bien(){ const s = mesa.cuentas[5], n = mesa.n; if(!n) return 'Diez tiradas y sus seises contados: la frecuencia es lo que se ve, y la probabilidad, 1/6, lo que se cuenta antes. No son la misma cosa.'; return 'En ' + n + ' tiradas, <b>' + s + (s === 1 ? ' seis' : ' seises') + '</b>: frecuencia ' + s + '/' + n + ' = ' + dec(s, n, 2) + '. La cuenta de antes decía 1/6 = 0,17. ' + (Math.abs(s / n - 1/6) > .08 ? 'No se parecen mucho, y no tienen por qué: diez tiradas son pocas.' : 'Se parecen, pero es casualidad: diez tiradas son pocas para fiarse.') + ' Lo que se ve se llama <b>frecuencia</b>; lo que se cuenta, probabilidad.'; },
+   mal(){ if(mesa.dado !== 'honrado') return 'Ése es el dado de la casa, mi señor. Con el honrado.'; return 'Van ' + mesa.n + ' tiradas. Pedíais diez.'; }},
+  {sala:'mesa', pre(){ mesa.dado = 'honrado'; vaciaMesa(); },
+   t:'Con diez no me fío. <b>Tira mil veces</b>, que para eso tengo escudero. ¿Se acerca a lo que dice la cuenta?',
+   ok: () => mesa.dado === 'honrado' && mesa.n >= 1000,
+   bien(){ const s = mesa.cuentas[5], n = mesa.n; if(!n) return 'Mil tiradas: la frecuencia del seis se pone al lado de un sexto y ya no se aleja mucho. Nunca llega del todo, y no hace falta.'; return 'En ' + cifra(n, 0) + ' tiradas, ' + s + ' seises: frecuencia <b>' + dec(s, n, 3) + '</b>, contra 0,167 de la cuenta. Se ha acercado, y mirad la línea: al principio saltaba y ahora casi no se mueve. Eso es que <b>a la larga la frecuencia se pone al lado de la probabilidad</b>. Nunca llega del todo, y no hace falta. Tiene nombre y es un teorema; está en las deudas.'; },
+   mal(){ if(mesa.dado !== 'honrado') return 'Con el dado honrado, mi señor.'; return 'Van ' + cifra(mesa.n, 0) + '. Pedíais mil: pulsad × 1000.'; }},
+  {sala:'mesa', pre(){ mesa.dado = 'cargado'; vaciaMesa(); tirarMesa(300); },
+   t:'La casa ha puesto <b>su</b> dado en la mesa, y el tabernero jura que es honrado. Escudero: ¿vale un sexto el seis con ese dado?',
+   ops:[
+     {t:'Sí: un dado tiene seis caras y una es el seis, así que un sexto.', ok:false, r:'Seis caras tiene, pero no con la misma ventura: está cargado. La cuenta de Laplace <b>solo vale cuando todos los casos tienen la misma ventura</b>, y aquí no la tienen. Mirad la mesa: en trescientas tiradas el seis ha salido ' + mesa.cuentas[5] + ' veces, y un sexto de trescientas serían cincuenta.'},
+     {t:'No: la cuenta de Laplace pide casos con la misma ventura, y éste no los tiene. Solo queda tirar y mirar la frecuencia.', ok:true, r:'Eso es, y es lo importante de toda la mesa: la cuenta tiene una <b>condición</b>. Con el dado honrado se cumple porque el dado es simétrico; con el de la casa, no, y no hay nada que contar. En trescientas tiradas el seis ha salido ' + mesa.cuentas[5] + ' veces: la frecuencia es lo único que tenemos, y dice que la casa le dejó al seis un doceavo.'},
+     {t:'Vale un sexto, pero la casa hace trampa al tirar.', ok:false, r:'La trampa no está en la mano: está en el dado, y por eso no vale la cuenta. Un sexto sale de suponer que las seis caras tienen la misma ventura, y este dado no la tiene. Mirad la mesa: ' + mesa.cuentas[5] + ' seises en trescientas tiradas. Con un dado honrado serían unos cincuenta.'}
+   ]},
+  {sala:'dados', pre(){ Object.assign(dados, {suceso:'suma2', n:0, hits:0, ultimo:null}); },
+   t:'En la taberna se apuesta a la suma de dos dados, y todos apuestan al siete. <b>Marca en la tabla las casillas de suma siete</b> y dime cuántas son.',
+   ok: () => dados.suceso === 'suma7',
+   bien:'<b>Seis</b> casillas de treinta y seis, mi señor: la diagonal larga. Con un uno en el rojo hace falta un seis en el azul; con un dos, un cinco; y así seis veces. 6/36 = 1/6. Es la suma que más maneras tiene de salir, y por eso todos apuestan a ella.',
+   mal(){ return 'Está marcado «' + SUCESOS_DD[dados.suceso].nom + '». Pedíais suma siete.'; }},
+  {sala:'dados', pre(){ Object.assign(dados, {suceso:'suma12', n:0, hits:0, ultimo:null}); },
+   t:'El tabernero dice que el doce sale tan poco como el siete, «que las dos son sumas». Escudero, ¿qué es más fácil, suma siete o suma doce?',
+   ops:[
+     {t:'Igual de fácil: las dos son una suma, y una suma es una suma.', ok:false, huevo:'leibniz', r:'Eso mismo creyó Leibniz, que era de los más listos de su siglo: que once y doce eran igual de fáciles. Y no. Contad casillas: el doce solo sale con seis y seis, <b>una</b> casilla; el siete sale de <b>seis</b>. Una suma no es un caso: es un montón de casos, y hay que contarlos.'},
+     {t:'Suma siete: seis casillas contra una.', ok:true, r:'Seis veces más fácil, mi señor, y se ve sin fórmula: la diagonal del siete tiene seis casillas y la esquina del doce, una. Cada casilla vale lo mismo; cada suma vale lo que casillas tiene. Por eso el tabernero quiere que apostéis al doce.'},
+     {t:'Suma doce: es más alta, y las altas cuestan más.', ok:false, r:'Cuestan más de salir, sí, pero no por altas: por tener <b>menos casillas</b>. El doce sale solo con seis y seis: una casilla. El siete, de seis maneras. Mirad la tabla: la esquina contra la diagonal.'}
+   ]},
+  {sala:'dados', pre(){ Object.assign(dados, {suceso:'doble', n:0, hits:0, ultimo:null}); },
+   t:'Un paje me discute que los casos no son treinta y seis: «son doce, seis y seis», dice uno; «son veintiuno, que tres-cuatro y cuatro-tres es lo mismo», dice otro. ¿Por qué son treinta y seis?',
+   ops:[
+     {t:'Porque seis por seis es la fórmula de los dos dados.', ok:false, r:'Es el resultado, no la razón. La razón es que <b>cada cara del rojo va con cada cara del azul</b>: las seis del rojo, cada una con las seis del azul, y eso es seis filas de seis. Y tres-cuatro y cuatro-tres son dos casillas distintas aunque sumen lo mismo: el rojo y el azul no son el mismo dado.'},
+     {t:'Porque cada cara del rojo va con cada cara del azul, y tres-cuatro no es cuatro-tres: son dos casillas.', ok:true, r:'Eso es, y las dos mitades importan. La primera es la <b>tabla</b>: seis filas de seis. La segunda es que <b>el orden cuenta</b> aunque no se vea: si juntáis tres-cuatro con cuatro-tres en un solo caso, ese caso vale el doble que seis-seis, y ya no tienen todos la misma ventura. Se dejan separados para que la cuenta de Laplace valga.'},
+     {t:'Porque son veintiuno, pero los dobles se cuentan dos veces.', ok:false, r:'Al revés: son los <b>no dobles</b> los que valen dos casillas cada uno, tres-cuatro y cuatro-tres. Los dobles valen una. Si los juntáis en veintiún casos, unos pesan el doble que otros y la cuenta no vale. Se dejan los treinta y seis, todos iguales.'}
+   ]},
+  {sala:'heraldica', pre(){ Object.assign(her, {suceso:'estrella', sacado:null}); },
+   t:'Doce caballeros para la melé, y se sortea el bando por escudo. <b>Marca «gules» y saca un escudo al azar</b>. ¿Cuántos son de gules?',
+   ok: () => her.suceso === 'gules' && her.sacado !== null,
+   bien(){ const e = her.sacado !== null && ESCUDOS[her.sacado]; return '<b>Seis</b> de doce, la fila de arriba: 6/12 = 1/2.' + (e ? ' Ha salido <b>' + e.nom + '</b>, que es de ' + e.campo + (e.campo === 'gules' ? ', así que cumple' : ', así que no cumple') + '; pero antes de sacar tenía la mitad, como cualquiera.' : '') + ' La tabla de dos por dos es la lista entera, puesta en orden.'; },
+   mal(){ if(her.suceso !== 'gules') return 'Está marcado «' + SUCESOS_H[her.suceso].nom + '». Pedíais gules.'; return 'Gules, bien. Ahora sacad un escudo.'; }},
+  {sala:'heraldica', pre(){ Object.assign(her, {suceso:'gulesOestrella', sacado:null}); },
+   t:'Mi bando será «gules <b>o</b> estrella». El paje dice que somos doce: seis de gules más seis de estrella. Escudero, ¿cuántos escudos son «gules o estrella»?',
+   ops:[
+     {t:'Doce: seis de gules más seis de estrella.', ok:false, r:'Contad en la tabla, no sumando: la fila de gules son seis y la columna de estrella son seis, pero los tres de gules con estrella están en las dos, y son tres escudos, no seis. Nueve. Cuando dos sucesos comparten casos, sumar los cuenta dos veces.'},
+     {t:'Nueve: seis y seis, menos los tres que están en las dos cuentas.', ok:true, r:'Nueve, mi señor: 6 + 6 − 3. Los tres de gules con estrella cumplen las dos cosas y son los mismos tres escudos. Por eso se <b>cuentan escudos</b> y no se suman probabilidades: sumar solo vale cuando los sucesos no comparten nada. 9/12 = 3/4.'},
+     {t:'Tres: los que son gules y estrella a la vez.', ok:false, r:'Tres son los de «gules <b>y</b> estrella», los que cumplen las dos. «Gules <b>o</b> estrella» son los que cumplen una cualquiera de las dos: la fila entera y la columna entera, nueve. La «o» junta; la «y» cruza.'}
+   ]},
+  {sala:'heraldica', pre(){ Object.assign(her, {suceso:'noGules', sacado:null}); },
+   t:'Última de escudos. ¿Cuánto vale «<b>no</b> gules»? ¿Y «gules <b>y</b> azur a la vez»?',
+   ops:[
+     {t:'«No gules» es 1 − 6/12 = 6/12. «Gules y azur» es cero: ningún escudo tiene dos campos. Son incompatibles.', ok:true, r:'Las dos, mi señor. El contrario de un suceso es todo lo que no es él, y vale uno menos: 1 − 6/12 = 6/12, los seis de azur. Y «gules y azur» no lo cumple nadie porque un campo es de un solo esmalte: cero de doce. Dos sucesos que no pueden pasar a la vez se llaman <b>incompatibles</b>; «gules y estrella», que sí pueden, son compatibles.'},
+     {t:'«No gules» es 6/12 y «gules y azur» es 12/12, que son todos los escudos.', ok:false, r:'Todos los escudos son «gules <b>o</b> azur»: 12/12. Pero «gules <b>y</b> azur» pide las dos cosas al mismo escudo, y ningún campo es de dos esmaltes: 0/12. La «y» cruza y aquí el cruce está vacío: son incompatibles.'},
+     {t:'«No gules» es 0: si no es gules, no vale nada.', ok:false, r:'«No gules» no es nada: son los seis escudos de azur. El contrario de un suceso lo cumple todo lo que no lo cumple, y vale uno menos la probabilidad del suceso: 1 − 6/12 = 6/12. El que vale cero es «gules y azur»: incompatibles.'}
+   ]},
+  {sala:'banca', pre(){ Object.assign(banca, {suceso:'suma7', paga:4}); vaciaBanca(); },
+   t:'La apuesta de la taberna: una moneda a que sale suma siete, y si sale la casa paga cuatro. Suena bien. Escudero, <b>juega treinta y seis rondas</b> y dime quién gana.',
+   ok: () => banca.suceso === 'suma7' && banca.paga === 4 && banca.rondas >= 36,
+   bien(){ if(!banca.rondas) return 'Treinta y seis rondas a siete con paga cuatro: en la cuenta, cobráis 24 y perdéis 30. Gana la casa, y no por suerte.'; return 'Tras ' + banca.rondas + ' rondas vuestra bolsa va en <b>' + (banca.bolsa >= 0 ? '+' : '') + banca.bolsa + '</b>. ' + (banca.bolsa < 0 ? 'Gana la casa. ' : banca.bolsa > 0 ? 'Vais ganando, y es la suerte, que dura poco. ' : 'En paz, por ahora. ') + 'La cuenta lo decía: en treinta y seis rondas el siete sale unas seis veces, cobráis 6 × 4 = 24 y perdéis unas 30 monedas. Faltan seis. Jugad trescientas sesenta y mirad si la suerte aguanta.'; },
+   mal(){ if(banca.suceso !== 'suma7' || banca.paga !== 4) return 'La apuesta es a suma siete con paga cuatro, mi señor. Ponedla.'; return 'Van ' + banca.rondas + ' rondas. Pedíais treinta y seis.'; }},
+  {sala:'banca', pre(){ Object.assign(banca, {suceso:'suma7', paga:4}); vaciaBanca(); jugar(360); },
+   t:'Trescientas sesenta rondas y la bolsa como está. Quiero saber cuánto tendría que pagar la casa por el siete para que el juego fuera justo.',
+   ops:[
+     {t:'Seis: una por cada casilla del siete.', ok:false, r:'Con seis ganaríais vos a la larga: en treinta y seis rondas cobraríais 6 × 6 = 36 y perderíais 30. La casa cerraría. Lo justo es que se compense: 36 − 6 = 30 monedas perdidas contra 6 pagas, y 30 entre 6 son <b>cinco</b>.'},
+     {t:'Cinco: en treinta y seis rondas se pierden treinta monedas y se gana seis veces; treinta entre seis.', ok:true, r:'Cinco, mi señor. Con paga cinco, en treinta y seis rondas cobráis 6 × 5 = 30 y perdéis 30: en paz, a la larga. Eso es un juego <b>justo</b>: treinta y seis entre las casillas que ganan, menos la moneda que pusisteis. La casa paga cuatro, y ese uno de diferencia es de lo que vive.'},
+     {t:'Cuatro está bien: es lo que paga la casa, y la casa sabe.', ok:false, r:'La casa sabe, y por eso paga cuatro: en treinta y seis rondas cobráis 24 y perdéis 30, y ella se queda seis. Para que fuera justo tendría que pagar <b>cinco</b>: treinta monedas perdidas entre seis veces que sale. Un juego justo es el que a la larga no deja nada en la casa.'}
+   ]},
+  {sala:'banca', pre(){ Object.assign(banca, {suceso:'suma7', paga:4}); vaciaBanca(); jugar(3600); },
+   t:'Última, escudero, y quiero la respuesta entera. La casa paga de menos, vale. Pero yo he visto ganar a gente. ¿Por qué la casa <b>siempre</b> gana?',
+   ops:[
+     {t:'Porque tiene suerte, y la suerte también se acumula.', ok:false, r:'La suerte no se acumula: se cancela. Lo que se acumula es la cuenta. Con paga cuatro la casa se queda una moneda de cada seis ganadas, y a la larga la frecuencia del siete se pone al lado de un sexto, así que esa moneda llega <b>siempre</b>. Se puede ganar una noche; no se puede ganar mil.'},
+     {t:'Porque paga de menos, y a la larga la frecuencia se pone al lado de la probabilidad, así que la cuenta acaba mandando.', ok:true, r:'Entera, mi señor. Dos mitades: la casa paga cuatro donde lo justo son cinco, y eso solo es una pizca por ronda; y a la larga la frecuencia obedece a la cuenta, así que la pizca se cobra en cada ronda de las muchas. Una noche se gana. Mil noches, no. Mirad la bolsa: ' + banca.rondas + ' rondas y va en ' + banca.bolsa + '.'},
+     {t:'Porque el dado está cargado, siempre.', ok:false, r:'No hace falta: con un dado honrado la casa gana igual. Basta con pagar cuatro donde lo justo son cinco, y con esperar. A la larga la frecuencia del siete es un sexto, la pizca se cobra en cada ronda, y en ' + banca.rondas + ' rondas la bolsa va en ' + banca.bolsa + '. El dado cargado es para los impacientes.'}
+   ]}
+];
+
+const RANGOS = [
+  {n:'Paje',                         s:'el sorteo',            hasta:3,  campo:'plata',   fig:''},
+  {n:'Escudero',                     s:'la mesa de dados',     hasta:6,  campo:'azur',    fig:'banda'},
+  {n:'Caballero novel',              s:'los dos dados',        hasta:9,  campo:'sinople', fig:'estrella'},
+  {n:'Caballero',                    s:'la heráldica',         hasta:12, campo:'gules',   fig:'cruz'},
+  {n:'Campeón del torneo',           s:'la banca',             hasta:15, campo:'gules',   fig:'estrella', borde:'var(--oro)'},
+  {n:'Caballero de la Mesa Redonda', s:'las quince lanzas',    hasta:99, campo:'purpura', fig:'corona', borde:'var(--oro)'}
+];
+function rangoDe(n){ return RANGOS.find(r => n < r.hasta) || RANGOS[RANGOS.length - 1]; }
+function pintaRango(){
+  const n = hechos.size, r = rangoDe(n), i = RANGOS.indexOf(r);
+  const desde = i ? RANGOS[i - 1].hasta : 0, tramo = Math.min(r.hasta, ENCARGOS.length) - desde;
+  $('rangoNom').textContent = r.n;
+  $('rangoSig').textContent = r.s;
+  $('rangoCuenta').textContent = n >= ENCARGOS.length ? 'torneo ganado · ' + n + ' de ' + ENCARGOS.length
+    : (n - desde) + ' de ' + tramo + ' para ' + (RANGOS[i + 1] ? RANGOS[i + 1].n.toLowerCase() : '');
+  $('rangoBarra').style.width = (n >= ENCARGOS.length ? 100 : Math.round((n - desde) / tramo * 100)) + '%';
+  $('lanzasT').textContent = n + ' de ' + ENCARGOS.length;
+  const e = $('rangoEscudo'); e.innerHTML = '<svg viewBox="0 0 40 48" aria-hidden="true"></svg>';
+  escudo(e.firstChild, 0, 1, 40, r.campo, r.fig, r.borde ? {borde:r.borde} : {});
+}
+
+let enc = 0, elegida = null;
+const hechos = new Set();
+const dichos = {};
+const huevos = new Set();
+const HUEVOS = ['palco', 'oca', 'azar', 'vetula', 'espiraculo', 'hermanos', 'leibniz', 'caballero'];
+const HUEVO_DICE = {
+  palco:'el rey se aburre', oca:'de oca a oca', azar:'az-zahr, el dado', vetula:'el poema que contó los dados',
+  espiraculo:'el soplo del espiráculo', hermanos:'los hermanos de Percebal', leibniz:'equivocarse como Leibniz', caballero:'armado caballero'
+};
+let ultimoRango = 'Paje';
+
+const GUARDADO = 'justas.turno.v1';
+const CADUCA = 4*60*60*1000;
+let t0 = Date.now();
+function guardaTurno(){
+  try{
+    localStorage.setItem(GUARDADO, JSON.stringify({
+      v:1, ts:Date.now(), t0, enc, hechos:[...hechos], huevos:[...huevos], nombre:$('selloNombre').value || '',
+      taller:{ac:taller.ac, racha:taller.racha, mejor:taller.mejor}, aj:AJ
+    }));
+  }catch(e){}
+}
+function leeTurno(){
+  try{
+    const d = JSON.parse(localStorage.getItem(GUARDADO) || 'null');
+    if(!d || d.v !== 1 || !Array.isArray(d.hechos)) return null;
+    if(!(d.enc >= 0 && d.enc < ENCARGOS.length)) return null;
+    if(Date.now() - d.ts > CADUCA){ borraTurno(); return null; }
+    return d;
+  }catch(e){ return null; }
+}
+function borraTurno(){ try{ localStorage.removeItem(GUARDADO); }catch(e){} }
+const dicho = x => typeof x === 'function' ? x() : x;
+
+function pintaOpciones(){
+  const e = ENCARGOS[enc], caja = $('ops');
+  caja.innerHTML = ''; caja.hidden = !e.ops;
+  if(!e.ops) return;
+  e.ops.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'op'; b.textContent = o.t;
+    b.setAttribute('aria-pressed', String(elegida === i));
+    b.addEventListener('click', () => { if(hechos.has(enc)) return; elegida = i; pintaOpciones(); });
+    caja.appendChild(b);
+  });
+}
+const CIERRE = '<b>Torneo ganado: quince lanzas rotas.</b> Todo lo de estas justas era contar, y eran dos cuentas: la de antes, que se hace en la lista de lo que puede salir, '
+  + 'y la de después, que se hace en la mesa con lo que ha salido. La primera se llama probabilidad y solo vale si todos los casos tienen la misma ventura; la segunda, frecuencia, '
+  + 'y es lo único que queda cuando no la tienen. Se acercan cuanto más se tira, y nunca son la misma. La casa lo sabe, y por eso paga de menos y espera. '
+  + 'Y otra cosa, que Listosín me dijo en la corte y que aquí vuelve: lo pequeño, repetido muchas veces, no lo aguanta ningún reino. Allí era un grano de trigo; aquí, una moneda de cada seis.';
+function pintaEncargo(){
+  const e = ENCARGOS[enc], ultimo = enc === ENCARGOS.length - 1, hecho = hechos.has(enc);
+  if(e.pre) e.pre();
+  muestraSala(e.sala);
+  elegida = hecho && e.ops ? e.ops.findIndex(o => o.ok) : null;
+  pintaOpciones();
+  $('encTxt').innerHTML = (ultimo && hecho) ? CIERRE : e.t;
+  $('cual').textContent = (ultimo && hecho) ? 'torneo ganado' : 'encargo ' + (enc + 1) + ' de ' + ENCARGOS.length;
+  $('atras').disabled = enc === 0;
+  $('comprobar').textContent = !hecho ? 'Comprobar' : (ultimo ? 'Empezar de nuevo' : 'Siguiente encargo →');
+  const inf = $('informe');
+  inf.hidden = !hecho;
+  if(hecho){ inf.className = 'panel informe encargo'; $('infTxt').innerHTML = dichos[enc] || (e.ops ? dicho(e.ops.find(o => o.ok).r) : dicho(e.bien)); }
+  pintaIndice(); pintaRango();
+}
+function revisa(){ const e = ENCARGOS[enc]; if(!e || e.ops || !hechos.has(enc)) return; $('informe').hidden = false; }
+
+const dentroDe = svg => svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+const CACHALOTE_BIEN = '<svg viewBox="0 -10 46 58" aria-hidden="true">' + dentroDe(CARA_CACHALOTE)
+  + '<path d="M41.2 22.4 L46 -6" stroke="#8D6E4A" stroke-width="2.2" stroke-linecap="round"/><path d="M46 -6 L46 4 L40 -1 Z" fill="#C93A46" stroke="#241C36" stroke-width=".8"/>'
+  + '<path d="M30 -2 l1.5 -4 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 Z" fill="#D9A441"/></svg>';
+const CACHALOTE_MAL = '<svg viewBox="0 -10 46 58" aria-hidden="true">' + dentroDe(CARA_CACHALOTE)
+  + '<g fill="none" stroke="#9FD0E6" stroke-width="2" stroke-linecap="round"><path d="M11.5 6 Q6 -2 8 -8"/><path d="M11.5 6 Q12 -3 11 -9"/><path d="M11.5 6 Q17 -1 18 -7"/></g>'
+  + '<g fill="#9FD0E6"><circle cx="6" cy="-9" r="1.4"/><circle cx="12" cy="-11" r="1.2"/><circle cx="19" cy="-9" r="1.4"/></g></svg>';
+$('asomoLado').innerHTML = CARA_JEFARTURO;
+$('asomoEntero').innerHTML = PERCEBAL_HERALDO;
+
+const asomoReloj = {};
+function asoma(id, clase, contenido, ms){
+  const a = $(id); clearTimeout(asomoReloj[id]);
+  if(contenido) a.innerHTML = contenido;
+  const base = a.className.replace(/\s*\b(mira|falla)\b/g, '');
+  a.className = base; void a.offsetWidth;
+  a.className = base + ' ' + clase;
+  asomoReloj[id] = setTimeout(() => { a.className = base; }, ms);
+}
+function asomate(bien){ asoma('asomoArriba', bien ? 'mira' : 'mira falla', bien ? CACHALOTE_BIEN : CACHALOTE_MAL, 2400); }
+function asciende(){ asoma('asomoEntero', 'mira', null, 2800); }
+function rompeLanza(){
+  const viejo = document.querySelector('.lanzaRota'); if(viejo) viejo.remove();
+  const d = document.createElement('div'); d.className = 'lanzaRota';
+  d.innerHTML = '<svg viewBox="0 0 220 60" aria-hidden="true"><g class="mitad1"><path d="M6 44 L108 12" stroke="#8D6E4A" stroke-width="6" stroke-linecap="round"/><circle cx="20" cy="40" r="6" fill="#C93A46" stroke="#16121F" stroke-width="1"/></g>'
+    + '<g class="mitad2"><path d="M112 10 L200 6" stroke="#8D6E4A" stroke-width="6" stroke-linecap="round"/><path d="M200 6 L216 2 L206 12 Z" fill="#B8B4A8" stroke="#16121F" stroke-width="1"/></g>'
+    + '<path d="M110 10 l3 -8 l2 8 l8 -3 l-6 6 l8 3 l-8 1 l4 7 l-8 -5 l-2 8 l-3 -8 l-7 5 l4 -7 l-8 -1 l8 -3 l-6 -6 Z" fill="#D9A441"/></svg>';
+  $('pEncargo').appendChild(d); Ruido.lanza();
+  $('lanzas').classList.add('rota'); setTimeout(() => $('lanzas').classList.remove('rota'), 1600);
+  setTimeout(() => d.remove(), 1300);
+}
+const PALCO = [
+  '¿Falta mucho? El rey tiene cosas de rey.',
+  'Se me duerme la corona. Seguid, seguid.',
+  'En mi corte se cuenta más deprisa. Bueno, no: se dobla.',
+  'Que alguien traiga vino. Y un dado honrado, si queda.',
+  'Listosín dice que esto es matemática. A mí me parece taberna.'
+];
+let quieto = null, palcoReloj = null;
+function palcoFuera(){ clearTimeout(palcoReloj); $('asomoLado').classList.remove('mira'); $('globoLado').classList.remove('mira'); }
+function palcoAsoma(){
+  if(taller.enTaller || $('pEncargo').hidden || !$('tourCapa').hidden || !$('mAjustes').hidden || !$('mSello').hidden || document.hidden) return;
+  $('asomoLado').innerHTML = CARA_JEFARTURO;
+  $('globoLado').textContent = PALCO[Math.floor(Math.random() * PALCO.length)];
+  $('asomoLado').classList.add('mira'); $('globoLado').classList.add('mira');
+  huevo('palco');
+  palcoReloj = setTimeout(palcoFuera, 6000);
+}
+function armaQuieto(){ clearTimeout(quieto); palcoFuera(); quieto = setTimeout(palcoAsoma, 60000); }
+['pointerdown', 'keydown', 'scroll'].forEach(ev => addEventListener(ev, armaQuieto, {passive:true}));
+function listosinDice(frase, ms = 7000){
+  clearTimeout(quieto); palcoFuera();
+  $('asomoLado').innerHTML = CARA_LISTOSIN;
+  $('globoLado').textContent = frase;
+  $('asomoLado').classList.add('mira'); $('globoLado').classList.add('mira');
+  palcoReloj = setTimeout(palcoFuera, ms);
+}
+function azzahr(){
+  if(AJ.azar) return;
+  AJ.azar = true; huevo('azar'); guardaTurno();
+  listosinDice('Azar viene del árabe az-zahr, que quiere decir «el dado». La palabra es el dado mismo. Lo dice el mago.', 8000);
+  setTimeout(() => {
+    cierraPaneles(); $('pGlosario').hidden = false; $('bGlosario').setAttribute('aria-pressed', 'true');
+    document.querySelectorAll('.glosa.marca').forEach(g => g.classList.remove('marca'));
+    const g = $('glosa_azar'); g.classList.add('marca'); g.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 400);
+}
+let seisAntes = false;
+function dosSeises(){
+  const ahora = mesa.ultimo === 6;
+  if(ahora && seisAntes){ seisAntes = false; oca(); } else seisAntes = ahora;
+}
+const OCA_SVG = '<svg viewBox="0 0 60 48" aria-hidden="true"><ellipse cx="30" cy="45" rx="20" ry="2.5" fill="#000" opacity=".35"/>'
+  + '<path d="M12 34 Q10 18 28 18 Q44 18 46 30 Q48 40 34 42 L16 42 Q10 40 12 34 Z" fill="#EFE3C6" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>'
+  + '<path d="M40 24 Q42 8 48 6 Q54 6 54 12 L52 16 Q50 20 48 22 Q46 28 44 30" fill="#EFE3C6" stroke="#241C36" stroke-width="1.4" stroke-linejoin="round"/>'
+  + '<path d="M52 12 L60 14 L52 16 Z" fill="#D9A441" stroke="#241C36" stroke-width=".9"/><circle cx="50" cy="10" r="1.3" fill="#140F1F"/>'
+  + '<path d="M22 42 V46 M30 42 V46" stroke="#D9A441" stroke-width="2.2" stroke-linecap="round"/><path d="M14 30 Q22 22 30 30" fill="none" stroke="#241C36" stroke-width="1" opacity=".5"/></svg>';
+function oca(){
+  huevo('oca'); Ruido.oca();
+  const esc = $('pMesa').querySelector('.escena'); const vieja = esc.querySelector('.cruza'); if(vieja) vieja.remove();
+  const d = document.createElement('div'); d.className = 'cruza'; d.innerHTML = OCA_SVG + '<b>de oca a oca, y tiro porque me toca</b>';
+  esc.appendChild(d); setTimeout(() => d.remove(), 4200);
+  $('lecMesa').innerHTML += '<span class="murmullo">Dos seises seguidos, y ha pasado una oca. El juego de la oca es un juego de dados de hace cuatro siglos, y «de oca a oca» es tirar otra vez: la única regla que todo el mundo se sabe.</span>';
+}
+function hermanos(dice){
+  huevo('hermanos');
+  const viejo = $('pTaller').querySelector('.hermanos'); if(viejo) viejo.remove();
+  const d = document.createElement('div'); d.className = 'hermanos'; d.innerHTML = PERCEBAL_HERMANOS + '<b>(' + dice + ') (' + dice + ')</b>';
+  $('pTaller').appendChild(d); setTimeout(() => d.remove(), 4800);
+}
+$('caraCachalote').addEventListener('click', () => {
+  Ruido.despierta(); Ruido.soplo(); huevo('espiraculo');
+  const c = $('caraCachalote'); c.innerHTML = CACHALOTE_MAL; c.classList.add('nueva');
+  setTimeout(() => { c.innerHTML = CARA_CACHALOTE; c.classList.remove('nueva'); }, 900);
+});
+function huevo(nombre){
+  if(!HUEVO_DICE[nombre] || huevos.has(nombre)) return;
+  huevos.add(nombre); guardaTurno();
+}
+
+$('comprobar').addEventListener('click', () => {
+  const e = ENCARGOS[enc], inf = $('informe');
+  Ruido.despierta();
+  if(hechos.has(enc)){
+    if(enc < ENCARGOS.length - 1){ enc++; pintaEncargo(); }
+    else { hechos.clear(); enc = 0; ultimoRango = 'Paje'; pintaEncargo(); }
+    guardaTurno(); return;
+  }
+  let bien, dice;
+  if(e.ops){
+    if(elegida === null){ bien = false; dice = 'Elegid una, mi señor. «Ninguna» no se puede apostar.'; }
+    else { const o = e.ops[elegida]; bien = o.ok; dice = dicho(o.r);
+           if(!bien){ document.querySelectorAll('.op')[elegida].classList.add('fallada'); if(o.huevo) huevo(o.huevo); } }
+  }else{ bien = e.ok(); dice = bien ? dicho(e.bien) : dicho(e.mal); }
+  inf.hidden = false;
+  inf.className = 'panel informe encargo' + (bien ? '' : ' mal');
+  $('infTxt').innerHTML = dice;
+  asomate(bien);
+  if(bien){
+    hechos.add(enc); dichos[enc] = dice;
+    const r = rangoDe(hechos.size).n, sube = r !== ultimoRango;
+    if(sube){ ultimoRango = r; Ruido.asciende(); asciende(); if(hechos.size >= 12) setTimeout(rompeLanza, 300); } else Ruido.bien();
+    pintaEncargo(); inf.hidden = false;
+    $('infTxt').innerHTML = dice + (sube ? '<br><b>' + (hechos.size >= ENCARGOS.length ? 'Levantaos, caballero de la Mesa Redonda.' : 'Asciende a ' + r.toLowerCase() + '.') + '</b>' : '');
+    if(hechos.size >= ENCARGOS.length){ huevo('caballero'); setTimeout(() => listosinDice('Lo pequeño, repetido muchas veces, no lo aguanta ningún reino. Allí era trigo; aquí, una moneda de cada seis.', 9000), 1200); }
+    guardaTurno();
+  } else Ruido.mal();
+});
+$('atras').addEventListener('click', () => { if(enc > 0){ enc--; pintaEncargo(); guardaTurno(); } });
+
+function pintaIndice(){
+  const s = $('ixSalas');
+  if(!s.dataset.puesto){
+    s.dataset.puesto = '1';
+    Object.keys(SALAS).forEach(k => {
+      const b = document.createElement('button'); b.className = 'b'; b.textContent = LEMAS[k][0];
+      b.addEventListener('click', () => { muestraSala(k); cierraPaneles(); $(SALAS[k]).scrollIntoView({behavior:'smooth', block:'start'}); });
+      s.appendChild(b);
+    });
+  }
+  const l = $('ixLista'); l.innerHTML = '';
+  ENCARGOS.forEach((e, i) => {
+    const b = document.createElement('button');
+    b.className = (hechos.has(i) ? 'hecho ' : '') + (i === enc ? 'actual' : '');
+    b.innerHTML = '<b>' + String(i + 1).padStart(2, '0') + '</b>' + LEMAS[e.sala][0] + ' · ' + e.t.replace(/<[^>]*>/g, '').slice(0, 52) + '…';
+    b.addEventListener('click', () => { enc = i; pintaEncargo(); cierraPaneles(); guardaTurno(); scrollTo({top:0, behavior:'smooth'}); });
+    l.appendChild(b);
+  });
+}
+const PANELES = {bIndice:'pIndice', bGlosario:'pGlosario', bDeudas:'pDeudas'};
+function cierraPaneles(){
+  Object.entries(PANELES).forEach(([b, p]) => { $(p).hidden = true; $(b).setAttribute('aria-pressed', 'false'); });
+  $('pVetula').hidden = true;
+}
+Object.entries(PANELES).forEach(([b, p]) => $(b).addEventListener('click', () => {
+  const abre = $(p).hidden; cierraPaneles();
+  if(abre){ $(p).hidden = false; $(b).setAttribute('aria-pressed', 'true'); if(p === 'pIndice') pintaIndice();
+            $(p).scrollIntoView({behavior:'smooth', block:'start'}); }
+}));
+$('ixCerrar').addEventListener('click', () => { cierraPaneles(); pintaEncargo(); scrollTo({top:0, behavior:'smooth'}); });
+$('ixTodo').addEventListener('click', () => { ENCARGOS.forEach((_, i) => hechos.add(i)); enc = ENCARGOS.length - 1; ultimoRango = rangoDe(hechos.size).n; pintaEncargo(); guardaTurno(); });
+{
+  let armado = false, reloj = 0;
+  const desarma = () => { armado = false; clearTimeout(reloj); $('ixCero').classList.remove('armado'); $('ixCero').textContent = 'Empezar de cero'; };
+  $('ixCero').addEventListener('click', () => {
+    if(!armado){ armado = true; $('ixCero').classList.add('armado'); $('ixCero').textContent = 'Pulsa otra vez para borrarlo';
+      clearTimeout(reloj); reloj = setTimeout(desarma, 5000); return; }
+    desarma(); borraTurno(); hechos.clear(); huevos.clear(); enc = 0; taller.ac = 0; taller.racha = 0; taller.mejor = 0; ultimoRango = 'Paje'; t0 = Date.now(); AJ.azar = false;
+    pintaEncargo();
+  });
+}
+
+const GLOSARIO = [
+  ['azar', 'del árabe az-zahr: el dado', 'Lo que no se puede saber antes de que pase. La palabra viene del árabe <i>az-zahr</i>, «el dado», por el juego que se hacía con él. En inglés, <i>hazard</i> era un juego de dados medieval antes de ser «peligro».', 'azar'],
+  ['experimento aleatorio', 'se sabe qué puede salir, no qué saldrá', 'Tirar un dado, sacar un nombre del yelmo, elegir un escudo sin mirar. Se conoce la lista de lo posible; no se conoce el resultado.'],
+  ['espacio muestral', 'la lista', 'Todo lo que puede salir, puesto en lista y sin que falte nada. Siete nombres en el yelmo; seis caras; treinta y seis casillas; doce escudos.'],
+  ['suceso', 'una parte de la lista', 'Un trozo del espacio muestral: «que salga par», «suma siete», «gules o estrella». Un suceso elemental es un solo caso de la lista.'],
+  ['probabilidad', 'la cuenta de antes', 'Los casos que cumplen el suceso partido por los casos de la lista, cuando todos tienen la misma ventura. Es un número entre cero y uno. Se calcula antes de tirar y no cambia por tirar.'],
+  ['regla de Laplace', 'favorables entre posibles', 'La cuenta de arriba, con su nombre. Laplace la escribió en 1812, pero se usaba desde Cardano. La condición, que casi nunca se dice, es que todos los casos tengan la misma ventura; si no, no vale.'],
+  ['frecuencia relativa', 'la cuenta de después', 'Las veces que ha salido partido por las veces que se ha tirado. Es lo que se ve en la mesa. Cambia con cada tirada y, a la larga, se pone al lado de la probabilidad.'],
+  ['ley de los grandes números', 'a la larga', 'El teorema que dice que la frecuencia se acerca a la probabilidad cuanto más se tira. Lo demostró Jakob Bernoulli en 1713. Aquí se mira; no se demuestra. No dice que después de cinco seises «toque» un uno.'],
+  ['suceso seguro', 'vale uno', 'El que lo cumplen todos los casos: «que salga alguno de la lista». Probabilidad 1.'],
+  ['suceso imposible', 'vale cero', 'El que no lo cumple ninguno: «que salga un siete en un dado». Probabilidad 0.'],
+  ['suceso contrario', 'todo lo demás', 'Lo que no cumple el suceso. Su probabilidad es uno menos la del suceso: «no gules» vale 1 − 6/12.'],
+  ['compatibles e incompatibles', 'si pueden pasar a la vez', 'Dos sucesos son incompatibles cuando ningún caso los cumple a la vez: «gules y azur». Compatibles cuando alguno sí: «gules y estrella».'],
+  ['tabla de doble entrada', 'filas por columnas', 'La lista de dos cosas a la vez, puesta en tabla: el dado rojo por columnas y el azul por filas, o el campo por filas y la figura por columnas. Cada casilla es un caso.'],
+  ['juego justo', 'a la larga, nadie gana', 'Cuando lo que se paga al ganar compensa lo que se pierde al perder, contado sobre la lista. La paga justa es los casos totales entre los que ganan, menos la moneda que se puso.'],
+  ['dado cargado', 'el de la casa', 'Un dado con las caras de distinta ventura. Con él la regla de Laplace no vale, porque su condición falla, y solo queda la frecuencia.'],
+  ['gules', 'el rojo', 'El rojo de la heráldica. Los esmaltes tienen nombre desde el siglo XII: gules, azur, sinople, púrpura y sable son colores; oro y plata, metales.'],
+  ['azur', 'el azul', 'El azul de la heráldica. Sobre azur se ponen metales, no colores: por eso la cruz es de plata y no de gules.'],
+  ['campo', 'el fondo del escudo', 'El esmalte del fondo. Los dos temas de esta app se llaman por el campo: de sable, que es el negro, o de pergamino.'],
+  ['figura', 'lo que va sobre el campo', 'Lo que se pinta encima del campo: una cruz, una estrella, una banda, unas ondas. Cachalote lleva las ondas del lago.'],
+  ['lanza rota', 'un tanto', 'En las justas de verdad se puntuaba por lanzas rotas: el que rompía más en el choque ganaba. Aquí, un encargo hecho es una lanza rota.'],
+  ['justa', 'de uno contra uno', 'El combate a caballo con lanza, de dos en dos, en la liza. La melé era todos contra todos. La justa se sorteaba.'],
+  ['De Vetula', 'hacia 1250', 'Un poema latino que se hacía pasar por obra de Ovidio y que contó bien, por primera vez, los casos de tres dados: 56 formas y 216 tiradas. No está en el índice.'],
+  ['Libro de los juegos', 'Alfonso X, 1283', 'El libro donde el rey sabio mandó dibujar los juegos de su tiempo: ajedrez, dados y tablas. Los tableros de la taberna salen de ahí.']
+];
+$('glosas').innerHTML = GLOSARIO.map(([p, n, d, id]) => '<div class="glosa"' + (id ? ' id="glosa_' + id + '"' : '') + '><span><b>' + p + '</b><i>' + n + '</i></span><p>' + d + '</p></div>').join('');
+
+function pintaVetula(){
+  const g = $('svgVetula'); g.innerHTML = '';
+  const cuenta = {}; for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++) for(let c = 1; c <= 6; c++) cuenta[a + b + c] = (cuenta[a + b + c] || 0) + 1;
+  const x0 = 40, y0 = 200, w = 24, dx = 30, maxC = 27;
+  for(let s = 3; s <= 18; s++){
+    const h = cuenta[s] / maxC * 150, x = x0 + (s - 3) * dx;
+    el(g, 'rect', {x, y:y0 - h, width:w, height:h, fill:s === 10 || s === 11 ? 'var(--gules)' : s === 9 || s === 12 ? 'var(--oro)' : 'var(--figura)', 'fill-opacity':.8});
+    txt(g, x + w / 2, y0 - h - 5, cuenta[s], {'text-anchor':'middle', 'font-size':10, fill:'var(--tinta)'});
+    txt(g, x + w / 2, y0 + 14, s, {'text-anchor':'middle', 'font-size':10.5});
+  }
+  txt(g, x0, y0 + 32, 'suma de tres dados · tiradas de 216 que la dan', {'font-size':10.5});
+  gotica(g, 12, 24, '216 tiradas · 56 formas · el diez sale 27 veces y el nueve 25');
+  txt(g, 528, 244, 'Galileo, hacia 1620: 27 contra 25', {'text-anchor':'end', 'font-size':10.5, fill:'var(--oro)'});
+}
+function abreVetula(por){
+  huevo('vetula');
+  cierraPaneles(); entraTaller(false); $('mAjustes').hidden = true; $('mSello').hidden = true;
+  pintaVetula();
+  const p = $('pVetula'); p.hidden = false;
+  p.querySelector('.aviso').textContent = 'Esta sala se ha abierto por ' + por + '. No sale en el índice.';
+  p.scrollIntoView({behavior:'smooth', block:'start'});
+}
+{
+  let tecleado = '';
+  addEventListener('keydown', e => {
+    if(/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName) || e.key.length !== 1) return;
+    tecleado = (tecleado + e.key.toLowerCase()).slice(-8);
+    if(/vetula/.test(tecleado)){ tecleado = ''; abreVetula('el nombre del poema, escrito'); }
+  });
+}
+
+const numeroLibre = v => { const s = String(v).trim(); const n = parseFloat(s.includes(',') ? s.replace(/\./g, '').replace(',', '.') : s); return isNaN(n) ? null : n; };
+function leeFraccion(v){
+  const s = String(v).trim().replace(/\s+/g, '').replace('÷', '/').replace(':', '/');
+  const m = s.match(/^(-?\d+)\/(\d+)$/); if(m && +m[2]) return +m[1] / +m[2];
+  const n = numeroLibre(s); return n === null ? null : n;
+}
+const casiFrac = (v, num, den) => { const x = leeFraccion(v); return x !== null && Math.abs(x - num / den) <= .006; };
+const casi = (v, sol, tol = 1e-9) => { const n = numeroLibre(v); return n !== null && Math.abs(n - sol) <= tol; };
+const solTxt = e => typeof e.sol === 'string' ? e.sol : typeof e.sol === 'number' ? cifra(e.sol, 2) : frac(e.sol[0], e.sol[1]);
+
+const TIPOS = {
+  sorteo: {n:'El sorteo', sala:'sorteo', gen(){
+    const n = elige([4, 6, 8]), R = CABALLEROS.slice(1, n), modo = elige(['uno', 'campo', 'seguro']);
+    if(modo === 'uno'){ const c = elige(R);
+      return {t:'Con <b>' + n + ' caballeros</b> en el torneo, ¿qué probabilidad tiene Cachalote de que le toque <b>' + c.nom + '</b>?', sol:[1, n - 1], ok:v => casiFrac(v, 1, n - 1),
+              exp:'Hay ' + (n - 1) + ' nombres en el yelmo y uno es ' + c.nom + ': 1/' + (n - 1) + '.', pon(){ Object.assign(sorteo, {n, sacado:null}); }}; }
+    if(modo === 'campo'){ const campo = elige(['gules', 'azur', 'sinople']), k = R.filter(c => c.campo === campo).length;
+      return {t:'Con <b>' + n + ' caballeros</b>, ¿qué probabilidad hay de que a Cachalote le toque uno con campo <b>' + campo + '</b>? (de ' + campo + ' son: ' + (R.filter(c => c.campo === campo).map(c => c.nom).join(', ') || 'ninguno') + ')', sol:[k, n - 1], ok:v => casiFrac(v, k, n - 1),
+              exp:k + ' de los ' + (n - 1) + ' nombres son de ' + campo + ': ' + frac(k, n - 1) + '.', pon(){ Object.assign(sorteo, {n, sacado:null}); }}; }
+    const seguro = elige([true, false]);
+    return {t:'Con <b>' + n + ' caballeros</b>, ¿qué probabilidad hay de que a Cachalote le toque ' + (seguro ? '<b>alguno de la lista</b>' : '<b>él mismo</b>') + '?', sol:seguro ? [n - 1, n - 1] : [0, n - 1], ok:v => casiFrac(v, seguro ? 1 : 0, 1),
+            exp:seguro ? 'Lo cumplen todos: ' + (n - 1) + '/' + (n - 1) + ' = 1. Suceso seguro.' : 'No lo cumple ninguno: 0. Suceso imposible.', pon(){ Object.assign(sorteo, {n, sacado:null}); }};
+  }},
+  undado: {n:'Un dado', sala:'mesa', gen(){
+    const modo = elige(['suceso', 'suceso', 'esperas']);
+    if(modo === 'esperas'){ const N = elige([60, 120, 300, 600]), esp = N / 6, tol = Math.ceil(2 * Math.sqrt(N * 5 / 36));
+      return {t:'Tiras un dado honrado <b>' + N + ' veces</b>. ¿Cuántos seises esperas, más o menos?', sol:'unos ' + esp + ' (entre ' + (esp - tol) + ' y ' + (esp + tol) + ')', ok:v => { const x = numeroLibre(v); return x !== null && Math.abs(x - esp) <= tol; },
+              exp:'Un sexto de ' + N + ' son ' + esp + '. Cualquier cifra entre ' + (esp - tol) + ' y ' + (esp + tol) + ' es razonable: es una frecuencia, no una cuenta exacta.', pon(){ mesa.dado = 'honrado'; vaciaMesa(); tirarMesa(N); }}; }
+    const S = elige([['par', [2, 4, 6]], ['impar', [1, 3, 5]], ['mayor que cuatro', [5, 6]], ['menor que tres', [1, 2]], ['múltiplo de tres', [3, 6]], ['distinto de seis', [1, 2, 3, 4, 5]], ['más de seis', []]]);
+    return {t:'Un dado honrado. ¿Qué probabilidad tiene «<b>' + S[0] + '</b>»?', sol:[S[1].length, 6], ok:v => casiFrac(v, S[1].length, 6),
+            exp:'Lo cumplen ' + (S[1].length || 'ninguna de las') + ' caras' + (S[1].length ? ' (' + S[1].join(', ') + ')' : '') + ' de seis: ' + frac(S[1].length, 6) + '.', pon(){ mesa.dado = 'honrado'; vaciaMesa(); }};
+  }},
+  dosdados: {n:'Dos dados', sala:'dados', gen(){
+    const k = elige(Object.keys(SUCESOS_DD)), c = casillas(k);
+    if(Math.random() < .4){ const s = al(2, 12); let cc = 0; for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++) if(a + b === s) cc++;
+      return {t:'Dos dados. ¿Qué probabilidad tiene <b>suma ' + s + '</b>?', sol:[cc, 36], ok:v => casiFrac(v, cc, 36), exp:'Suma ' + s + ' ocupa ' + cc + ' casillas de 36: ' + frac(cc, 36) + '.', pon(){ Object.assign(dados, {suceso:s === 7 ? 'suma7' : s === 2 ? 'suma2' : s === 12 ? 'suma12' : 'suma7', n:0, hits:0, ultimo:null}); }}; }
+    return {t:'Dos dados. ¿Qué probabilidad tiene «<b>' + SUCESOS_DD[k].nom + '</b>»?', sol:[c, 36], ok:v => casiFrac(v, c, 36), exp:c + ' casillas de 36: ' + frac(c, 36) + '.', pon(){ Object.assign(dados, {suceso:k, n:0, hits:0, ultimo:null}); }};
+  }},
+  escudos: {n:'Los escudos', sala:'heraldica', gen(){
+    const a = al(1, 4), b = al(1, 4), c = al(1, 4), d = al(1, 4), T = a + b + c + d;
+    const modo = elige(['gules', 'o', 'y', 'no']);
+    const tabla = ' (gules con cruz: ' + a + '; gules con estrella: ' + b + '; azur con cruz: ' + c + '; azur con estrella: ' + d + ')';
+    const q = {gules:[a + b, '«gules»: los de gules son ' + (a + b) + ' de ' + T + '.'],
+               o:[a + b + d, '«gules o estrella»: ' + (a + b) + ' de gules más ' + (b + d) + ' de estrella menos los ' + b + ' que están en las dos: ' + (a + b + d) + ' de ' + T + '.'],
+               y:[b, '«gules y estrella»: la casilla donde se cruzan, ' + b + ' de ' + T + '.'],
+               no:[c + d, '«no gules»: todo lo que no es gules, ' + (c + d) + ' de ' + T + ', que es 1 − ' + (a + b) + '/' + T + '.']}[modo];
+    const nom = {gules:'gules', o:'gules o estrella', y:'gules y estrella', no:'no gules'}[modo];
+    return {t:'Se saca un escudo al azar de <b>' + T + '</b>' + tabla + '. ¿Qué probabilidad tiene «<b>' + nom + '</b>»?', sol:[q[0], T], ok:v => casiFrac(v, q[0], T), exp:q[1] + ' ' + frac(q[0], T) + '.',
+            pon(){ Object.assign(her, {suceso:{gules:'gules', o:'gulesOestrella', y:'gulesYestrella', no:'noGules'}[modo], sacado:null}); }};
+  }},
+  banca: {n:'La banca', sala:'banca', gen(){
+    const k = elige(Object.keys(SUCESOS_B)), c = casillasB(k), justa = pagaJusta(k), modo = elige(['justa', 'quien']);
+    if(modo === 'justa') return {t:'En la taberna se apuesta una moneda a «<b>' + SUCESOS_B[k].nom + '</b>» (' + c + ' casillas de 36). ¿Cuánto tendría que pagar la casa para que el juego fuera justo?', sol:justa, ok:v => casi(v, justa, .01),
+                                  exp:'36 entre ' + c + ' son ' + 36 / c + '; menos la moneda que pusiste, ' + justa + '.', pon(){ Object.assign(banca, {suceso:k, paga:PAGAS.includes(justa) ? justa : 4}); vaciaBanca(); }};
+    const paga = elige(PAGAS.filter(p => p !== justa)), neto = c * paga - (36 - c);
+    return {t:'Una moneda a «<b>' + SUCESOS_B[k].nom + '</b>» (' + c + ' de 36), y la casa paga <b>' + paga + '</b>. En 36 rondas, ¿cuántas monedas gana o pierde el jugador, más o menos?', sol:neto, ok:v => casi(v, neto, .01),
+            exp:'Gana unas ' + c + ' veces: +' + c * paga + '. Pierde unas ' + (36 - c) + ': −' + (36 - c) + '. Neto ' + (neto > 0 ? '+' : '') + neto + '.', pon(){ Object.assign(banca, {suceso:k, paga}); vaciaBanca(); jugar(36); }};
+  }},
+  sino: {n:'Sí o no', sala:'mesa', bool:true, gen(){
+    const q = elige([
+      {t:'Después de cinco seises seguidos, el seis tiene <b>menos</b> probabilidad en la siguiente tirada.', sol:'no', exp:'El dado no tiene memoria: sigue siendo 1/6. La frecuencia se acerca porque las tiradas nuevas pesan cada vez menos, no porque el dado compense.', pon(){ mesa.dado = 'honrado'; vaciaMesa(); }, sala:'mesa'},
+      {t:'Con dos dados, suma siete es <b>más fácil</b> que suma doce.', sol:'sí', exp:'Seis casillas contra una.', pon(){ Object.assign(dados, {suceso:'suma7', n:0, hits:0, ultimo:null}); }, sala:'dados'},
+      {t:'Con dos dados, tres-cuatro y cuatro-tres son <b>el mismo caso</b>.', sol:'no', exp:'Son dos casillas: el rojo y el azul no son el mismo dado. Si se juntan, la cuenta de Laplace deja de valer.', pon(){ Object.assign(dados, {suceso:'suma7', n:0, hits:0, ultimo:null}); }, sala:'dados'},
+      {t:'Con el dado de la casa, el seis vale <b>un sexto</b> porque el dado tiene seis caras.', sol:'no', exp:'La cuenta de Laplace pide caras con la misma ventura, y el dado cargado no las tiene. Solo queda la frecuencia.', pon(){ mesa.dado = 'cargado'; vaciaMesa(); tirarMesa(300); }, sala:'mesa'},
+      {t:'La probabilidad de «gules o estrella» es la de gules <b>más</b> la de estrella.', sol:'no', exp:'Solo si no comparten escudos. Los de gules con estrella están en las dos cuentas, y se cuentan una vez.', pon(){ Object.assign(her, {suceso:'gulesOestrella', sacado:null}); }, sala:'heraldica'},
+      {t:'«Gules» y «azur» son sucesos <b>incompatibles</b>.', sol:'sí', exp:'Ningún escudo tiene dos campos: no pueden pasar a la vez.', pon(){ Object.assign(her, {suceso:'gulesYazur', sacado:null}); }, sala:'heraldica'},
+      {t:'El suceso seguro tiene probabilidad <b>uno</b>.', sol:'sí', exp:'Lo cumplen todos los casos: todos entre todos.', pon(){ Object.assign(sorteo, {n:8, sacado:null}); }, sala:'sorteo'},
+      {t:'Si la casa paga lo justo, <b>a la larga gana la casa</b>.', sol:'no', exp:'Justo es justo: a la larga, nadie gana. Por eso la casa no paga lo justo.', pon(){ Object.assign(banca, {suceso:'suma7', paga:5}); vaciaBanca(); jugar(360); }, sala:'banca'},
+      {t:'La frecuencia de un suceso <b>cambia</b> con cada tirada; su probabilidad, no.', sol:'sí', exp:'La frecuencia es la cuenta de después y se mueve; la probabilidad es la de antes y está quieta.', pon(){ mesa.dado = 'honrado'; vaciaMesa(); tirarMesa(100); }, sala:'mesa'},
+      {t:'Con mil tiradas la frecuencia del seis <b>llega a ser</b> exactamente un sexto.', sol:'no', exp:'Se acerca cuanto se quiera y no tiene por qué llegar. Mil no es múltiplo de seis, para empezar.', pon(){ mesa.dado = 'honrado'; vaciaMesa(); tirarMesa(1000); }, sala:'mesa'}
+    ]);
+    return {t:q.t, sol:q.sol, ok:v => String(v).trim().toLowerCase().replace('si', 'sí') === q.sol, exp:q.exp, pon:q.pon, sala:q.sala};
+  }}
+};
+
+const taller = {tipo:'sorteo', ej:null, ac:0, racha:0, mejor:0, enTaller:false, corregido:false};
+function pintaTipos(){
+  const c = $('tipos'); c.innerHTML = '';
+  Object.keys(TIPOS).forEach(k => {
+    const b = document.createElement('button'); b.className = 'b'; b.textContent = TIPOS[k].n;
+    b.setAttribute('aria-pressed', String(taller.tipo === k));
+    b.addEventListener('click', () => { taller.tipo = k; pintaTipos(); nuevoEjercicio(); });
+    c.appendChild(b);
+  });
+  $('tAc').textContent = taller.ac; $('tRacha').textContent = taller.racha; $('tMejor').textContent = taller.mejor;
+}
+function nuevoEjercicio(){
+  const T = TIPOS[taller.tipo];
+  taller.ej = T.gen(); taller.corregido = false;
+  $('ejer').innerHTML = taller.ej.t;
+  $('verTaller').hidden = true; $('verlo').hidden = true;
+  $('filaSiNo').hidden = !T.bool; $('filaResp').hidden = !!T.bool;
+  if(!T.bool){ const r = $('resp'); r.value = ''; r.placeholder = Array.isArray(taller.ej.sol) ? 'fracción o decimal' : 'tu respuesta'; r.focus(); }
+}
+function corrige(dado){
+  const v = dado !== undefined ? dado : $('resp').value;
+  if(!String(v).trim() || taller.corregido) return;
+  const bien = taller.ej.ok(v);
+  const ver = $('verTaller'); ver.hidden = false;
+  ver.className = 'veredicto' + (bien ? ' bien' : '');
+  if(bien){ taller.ac++; taller.racha++; taller.mejor = Math.max(taller.mejor, taller.racha); ver.innerHTML = '<b>Bien.</b> ' + taller.ej.exp; Ruido.bien();
+            if(taller.racha === 8){ hermanos(solTxt(taller.ej)); ver.innerHTML += ' <i>Ocho seguidos, y han salido los hermanos de Percebal a repetirlo. Crecen en piña; repiten en piña.</i>'; } }
+  else { taller.racha = 0; ver.innerHTML = 'No. La respuesta era <b>' + solTxt(taller.ej) + '</b>. ' + taller.ej.exp; Ruido.mal(); }
+  taller.corregido = true; $('verlo').hidden = !taller.ej.pon; pintaTipos(); guardaTurno();
+}
+function verEnSala(){ const e = taller.ej; if(!e || !e.pon) return; e.pon(); const s = e.sala || TIPOS[taller.tipo].sala; muestraSala(s); $(SALAS[s]).scrollIntoView({behavior:'smooth', block:'start'}); }
+function entraTaller(dentro){
+  taller.enTaller = dentro; $('bTaller').setAttribute('aria-pressed', String(dentro));
+  $('pTaller').hidden = !dentro; $('pEncargo').hidden = dentro; $('informe').hidden = dentro || !hechos.has(enc);
+  cierraPaneles();
+  if(dentro){ pintaTipos(); nuevoEjercicio(); for(const k in SALAS) $(SALAS[k]).hidden = true; } else pintaEncargo();
+}
+$('bTaller').addEventListener('click', () => entraTaller(!taller.enTaller));
+$('corrige').addEventListener('click', () => corrige());
+$('bSi').addEventListener('click', () => corrige('sí'));
+$('bNo').addEventListener('click', () => corrige('no'));
+$('resp').addEventListener('keydown', e => { if(e.key === 'Enter'){ taller.corregido ? nuevoEjercicio() : corrige(); } });
+$('otro').addEventListener('click', nuevoEjercicio);
+$('verlo').addEventListener('click', verEnSala);
+$('hojaDiez').addEventListener('click', () => {
+  const claves = Object.keys(TIPOS); const lista = [];
+  for(let i = 0; i < 10; i++) lista.push(TIPOS[claves[i % claves.length]].gen());
+  const limpia = h => h.replace(/<[^>]+>/g, '');
+  $('hoja').innerHTML = '<h2>Las justas de Cachalote del Lago · hoja de práctica</h2>'
+    + '<div class="cab">Azar y probabilidad · las probabilidades, como fracción · Nombre: ____________________ · Fecha: __________</div>'
+    + '<ol>' + lista.map(e => '<li>' + limpia(e.t) + '</li>').join('') + '</ol>'
+    + '<div class="clave"><h2>Clave del profesor</h2><ol>' + lista.map(e => '<li><b>' + solTxt(e) + '</b> — ' + limpia(e.exp) + '</li>').join('') + '</ol></div>';
+  document.body.classList.add('imprimiendo');
+  const fuera = () => { document.body.classList.remove('imprimiendo'); removeEventListener('afterprint', fuera); };
+  addEventListener('afterprint', fuera);
+  setTimeout(() => { print(); setTimeout(fuera, 800); }, 60);
+});
+
+$('bAjustes').addEventListener('click', () => { pintaAjustes(); $('mAjustes').hidden = false; });
+$('ajCerrar').addEventListener('click', () => { $('mAjustes').hidden = true; });
+$('mAjustes').addEventListener('click', e => { if(e.target.id === 'mAjustes') $('mAjustes').hidden = true; });
+
+function textoSello(){
+  const n = hechos.size, r = rangoDe(n), min = Math.max(1, Math.round((Date.now() - t0) / 60000));
+  const f = new Date(), fecha = f.toLocaleDateString('es-ES') + ' ' + f.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+  const estado = {v:1, h:[...hechos], t:[taller.ac, taller.racha, taller.mejor], e:[...huevos], min};
+  const sello = 'JCL1.' + btoa(unescape(encodeURIComponent(JSON.stringify(estado)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const nombre = $('selloNombre').value.trim() || '(sin nombre)';
+  return 'LAS JUSTAS DE CACHALOTE DEL LAGO · pergamino del heraldo\n'
+    + 'Se hace saber que ' + nombre + '\n'
+    + 'Fecha: ' + fecha + '\n'
+    + 'Rango: ' + r.n + ' · ' + r.s + '\n'
+    + 'Lanzas rotas: ' + n + ' de ' + ENCARGOS.length + (n ? ' · ' + [...hechos].sort((a, b) => a - b).map(i => i + 1).join(' ') : '') + '\n'
+    + 'Taller: ' + taller.ac + ' aciertos · racha ' + taller.racha + ' · mejor ' + taller.mejor + '\n'
+    + 'Hallazgos: ' + huevos.size + ' de ' + HUEVOS.length + (huevos.size ? ' · ' + [...huevos].map(h => HUEVO_DICE[h]).join(' · ') : '') + '\n'
+    + 'Tiempo en la liza: ' + min + ' min\n'
+    + 'Sello: ' + sello;
+}
+function pintaSello(){ $('selloTexto').innerHTML = textoSello().replace(/</g, '&lt;').replace(/(Sello: .*)/, '<span class="sello">$1</span>'); }
+$('bSello').addEventListener('click', () => { pintaSello(); $('mSello').hidden = false; $('selloAviso').textContent = ''; });
+$('selloCerrar').addEventListener('click', () => { $('mSello').hidden = true; });
+$('mSello').addEventListener('click', e => { if(e.target.id === 'mSello') $('mSello').hidden = true; });
+$('selloNombre').addEventListener('input', () => { pintaSello(); guardaTurno(); });
+$('selloCopiar').addEventListener('click', async () => {
+  const t = textoSello();
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){ await navigator.clipboard.writeText(t); $('selloAviso').textContent = 'copiado'; return; }
+  }catch(e){}
+  const r = document.createRange(); r.selectNodeContents($('selloTexto'));
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  $('selloAviso').textContent = 'seleccionado: copie con el sistema';
+});
+
+const PASOS = [
+  {id:'franja',   t:'Tu rango', d:'Empiezas de paje. Cada tres encargos asciendes: escudero, caballero novel, caballero, campeón del torneo. Con las quince lanzas, caballero de la Mesa Redonda. El escudo es el del rango.'},
+  {id:'lanzas',   t:'Las lanzas rotas', d:'En las justas de verdad ganaba quien rompía más lanzas. Aquí cada encargo hecho es una lanza rota, y con quince se gana el torneo.'},
+  {id:'pEncargo', t:'El encargo', d:'Cachalote pide. Se hace en la sala de abajo y se pulsa Comprobar. Contesta Percebal, el escudero percebe que vive pegado a su coraza y por eso lleva la cuenta.'},
+  {sel:'.fila',   t:'Los mandos', d:'Lo que se puede tocar: cuántos caballeros, qué dado, cuántas tiradas, qué suceso, cuánto paga la casa. Y los gestos: sacar del yelmo, tirar, jugar.'},
+  {sel:'.escena', t:'La escena', d:'La lista de lo que puede salir, siempre a la vista: nombres, caras, casillas, escudos. Y al lado, lo que ha salido de verdad.'},
+  {sel:'.lectura',t:'La lectura', d:'La definición primero, y luego las dos cuentas: la de antes, que es la probabilidad, y la de después, que es la frecuencia. Nunca una sola.'},
+  {id:'barra',    t:'La barra', d:'Taller para practicar libre, Salas para abrir cualquiera suelta, Glosario con las palabras del torneo, Deudas con lo que se dice sin demostrar, Pergamino para llevarse la sesión y Ajustes para elegir campo de sable o de pergamino.'}
+];
+let paso = 0;
+function elDe(p){
+  if(p.id) return $(p.id);
+  const sala = document.querySelector('#pSorteo:not([hidden]), #pMesa:not([hidden]), #pDados:not([hidden]), #pHeraldica:not([hidden]), #pBanca:not([hidden])');
+  return sala ? sala.querySelector(p.sel) : null;
+}
+function pintaPaso(){
+  const p = PASOS[paso], e = elDe(p);
+  if(!e){ paso++; if(paso >= PASOS.length){ cierraGuia(); return; } pintaPaso(); return; }
+  e.scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(() => {
+    const r = e.getBoundingClientRect(), f = $('tourFoco');
+    f.style.top = (r.top - 6) + 'px'; f.style.left = (r.left - 6) + 'px'; f.style.width = (r.width + 12) + 'px'; f.style.height = (r.height + 12) + 'px';
+    const g = $('tourGlobo'); $('tourTit').textContent = p.t; $('tourTxt').textContent = p.d;
+    $('tourNum').textContent = (paso + 1) + ' de ' + PASOS.length;
+    $('tourSig').textContent = paso === PASOS.length - 1 ? 'Terminar' : 'Siguiente';
+    const abajo = r.bottom + 12, alto = g.offsetHeight || 140;
+    g.style.top = (abajo + alto < innerHeight - 8 ? abajo : Math.max(8, r.top - alto - 12)) + 'px';
+    g.style.left = Math.min(Math.max(12, r.left), innerWidth - (g.offsetWidth || 320) - 12) + 'px';
+    g.focus();
+  }, 320);
+}
+function abreGuia(){ entraTaller(false); cierraPaneles(); paso = 0; $('tourCapa').hidden = false; pintaPaso(); }
+function cierraGuia(){ $('tourCapa').hidden = true; }
+$('bGuia').addEventListener('click', abreGuia);
+$('tourSig').addEventListener('click', e => { e.stopPropagation(); paso++; if(paso >= PASOS.length) cierraGuia(); else pintaPaso(); });
+$('tourSalir').addEventListener('click', e => { e.stopPropagation(); cierraGuia(); });
+$('tourCapa').addEventListener('click', e => { if(e.target.id === 'tourCapa') cierraGuia(); });
+addEventListener('keydown', e => { if(e.key === 'Escape'){ cierraGuia(); $('mAjustes').hidden = true; $('mSello').hidden = true; } });
+
+{
+  const lineas = ['yelmo', 'dados', 'escudos', 'banca'];
+  const rapido = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('bootLista').innerHTML = lineas.map((l, i) => '<span style="animation-delay:' + (rapido ? 0 : .3 + i * .45) + 's">' + l + '</span>').join('');
+  const fuera = () => { const b = $('boot'); if(!b || b.classList.contains('fuera')) return; b.classList.add('fuera'); setTimeout(() => b.remove(), 600); };
+  $('boot').addEventListener('click', fuera);
+  setTimeout(fuera, rapido ? 300 : 2900);
+}
+
+$('ixDiag').addEventListener('click', () => {
+  const d = $('diag'); d.hidden = false; const li = [];
+  const di = (t, ok) => li.push('<div class="' + (ok ? 'ok' : 'ko') + '">' + (ok ? '✓ ' : '✗ ') + t + '</div>');
+  di('el sorteo saca siempre un nombre de la lista, nunca el de Cachalote (300 pruebas)', [4, 6, 8].every(n => { sorteo.n = n; for(let i = 0; i < 100; i++){ const s = al(0, rivales().length - 1); if(!(s >= 0 && s < n - 1)) return false; } return rivales().every(c => c.nom !== 'Cachalote'); }));
+  { const h = [0,0,0,0,0,0], c = [0,0,0,0,0,0]; for(let i = 0; i < 12000; i++){ h[tiraDado('honrado') - 1]++; c[tiraDado('cargado') - 1]++; }
+    di('el dado honrado da cada cara cerca de un sexto (12.000 tiradas)', h.every(v => Math.abs(v / 12000 - 1/6) < .02));
+    di('el dado de la casa le deja al seis cerca de un doceavo, y al uno un cuarto', Math.abs(c[5] / 12000 - 1/12) < .015 && Math.abs(c[0] / 12000 - 1/4) < .02); }
+  di('la tabla de dos dados: siete 6, dos 1, doce 1, doble 6, al menos un seis 11, diez o más 6', casillas('suma7') === 6 && casillas('suma2') === 1 && casillas('suma12') === 1 && casillas('doble') === 6 && casillas('unSeis') === 11 && casillas('diez') === 6);
+  { let s = 0; for(let k = 2; k <= 12; k++){ let cc = 0; for(let a = 1; a <= 6; a++) for(let b = 1; b <= 6; b++) if(a + b === k) cc++; s += cc; } di('las sumas de dos a doce reparten las treinta y seis casillas sin sobrar ninguna', s === 36); }
+  { let h = 0; const N = 36000; for(let i = 0; i < N; i++) if(al(1, 6) + al(1, 6) === 7) h++; di('tirando dos dados 36.000 veces, el siete sale cerca de un sexto', Math.abs(h / N - 1/6) < .015); }
+  di('los doce escudos: gules 6, estrella 6, gules o estrella 9, gules y estrella 3, no gules 6, gules y azur 0', cuentaH('gules') === 6 && cuentaH('estrella') === 6 && cuentaH('gulesOestrella') === 9 && cuentaH('gulesYestrella') === 3 && cuentaH('noGules') === 6 && cuentaH('gulesYazur') === 0);
+  di('«o» es la suma menos el cruce: 6 + 6 − 3 = 9', cuentaH('gules') + cuentaH('estrella') - cuentaH('gulesYestrella') === cuentaH('gulesOestrella'));
+  di('la paga justa: siete → 5, doble → 5, nueve → 8, once → 17, doce → 35', pagaJusta('suma7') === 5 && pagaJusta('doble') === 5 && pagaJusta('suma9') === 8 && pagaJusta('suma11') === 17 && pagaJusta('suma12') === 35);
+  di('con la paga justa, en 36 rondas la cuenta queda en paz', Object.keys(SUCESOS_B).every(k => casillasB(k) * pagaJusta(k) - (36 - casillasB(k)) === 0));
+  { const g = {...banca}; Object.assign(banca, {suceso:'suma7', paga:4}); vaciaBanca(); jugar(3600); const b = banca.bolsa; Object.assign(banca, g);
+    di('jugando 3.600 rondas a siete con paga cuatro, la casa gana (bolsa negativa)', b < 0); }
+  di('las fracciones se dicen bien: 6/36 = 1/6, 9/12 = 3/4, 7/7 = 1, 0/7 = 0', frac(6, 36) === '6/36 = 1/6' && frac(9, 12) === '9/12 = 3/4' && frac(7, 7) === '7/7 = 1' && frac(0, 7) === '0/7 = 0');
+  di('se lee «1/6», «6/36», «0,17» y «0.17» como la misma respuesta', ['1/6', '6/36', '0,17', '0.17', ' 1 / 6 '].every(v => casiFrac(v, 1, 6)) && !casiFrac('1/5', 1, 6) && !casiFrac('basura', 1, 6));
+  let ok6 = true, n6 = 0; for(const k in TIPOS) for(let i = 0; i < 80; i++){ const e = TIPOS[k].gen(); n6++;
+    const sol = typeof e.sol === 'string' ? (e.sol.startsWith('unos') ? e.sol.replace(/unos (\d+).*/, '$1') : e.sol) : typeof e.sol === 'number' ? String(e.sol).replace('.', ',') : e.sol[0] + '/' + e.sol[1];
+    if(!e.ok(sol) || e.ok('999999') || e.ok('') || !e.t || !e.exp) ok6 = false; }
+  di('los ' + Object.keys(TIPOS).length + ' generadores del taller aceptan su solución y rechazan basura (' + n6 + ' pruebas)', ok6);
+  { let ok7 = true; const g = [{...sorteo}, {...mesa, cuentas:[...mesa.cuentas], serie:[...mesa.serie]}, {...dados}, {...her}, {...banca, serie:[...banca.serie]}];
+    for(let i = 0; i < 40; i++) for(const k in TIPOS){ const e = TIPOS[k].gen(); if(e.pon) e.pon();
+      if(![4,6,8].includes(sorteo.n) || !['honrado','cargado'].includes(mesa.dado) || !SUCESOS_DD[dados.suceso] || !SUCESOS_H[her.suceso] || !SUCESOS_B[banca.suceso] || !PAGAS.includes(banca.paga)) ok7 = false; }
+    Object.assign(sorteo, g[0]); Object.assign(mesa, g[1]); Object.assign(dados, g[2]); Object.assign(her, g[3]); Object.assign(banca, g[4]);
+    di('«verlo en la sala» deja los mandos en valores que existen (240 pruebas)', ok7); }
+  di('los ' + ENCARGOS.length + ' encargos apuntan a una sala que existe', ENCARGOS.every(e => SALAS[e.sala]));
+  di('cada encargo de opciones tiene UNA correcta, y todas explican', ENCARGOS.filter(e => e.ops).every(e => e.ops.filter(o => o.ok).length === 1 && e.ops.every(o => o.r && dicho(o.r).length > 20)));
+  di('cada encargo de manipulativo trae pre, bien y mal', ENCARGOS.filter(e => !e.ops).every(e => e.pre && e.bien && e.mal));
+  let ok8 = true; ENCARGOS.forEach(e => { if(e.ops) return; e.pre(); if(e.ok()) ok8 = false; });
+  di('ningún encargo de manipulativo está resuelto nada más abrirlo', ok8);
+  di('las ' + Object.keys(SALAS).length + ' salas tienen rótulo y pintor', Object.keys(SALAS).every(k => LEMAS[k] && PINTA[k]));
+  di('los rangos cubren los ' + ENCARGOS.length + ' encargos y acaban en la Mesa Redonda', rangoDe(0).n === 'Paje' && rangoDe(ENCARGOS.length).n === 'Caballero de la Mesa Redonda' && rangoDe(7).n === 'Caballero novel' && rangoDe(14).n === 'Campeón del torneo');
+  di('los ' + HUEVOS.length + ' hallazgos tienen su frase', HUEVOS.every(h => HUEVO_DICE[h]));
+  d.innerHTML = li.join('');
+  pintaEncargo();
+});
+
+Object.keys(SALAS).forEach(k => {
+  const pan = $(SALAS[k]), [nom, lema] = LEMAS[k];
+  const rot = document.createElement('div'); rot.className = 'salaRot';
+  rot.innerHTML = '<b>' + nom + '</b><span>' + lema + '</span>'; pan.insertBefore(rot, pan.firstChild);
+});
+{
+  const d = leeTurno();
+  if(d){
+    enc = d.enc; d.hechos.forEach(i => { if(i >= 0 && i < ENCARGOS.length) hechos.add(i); });
+    (d.huevos || []).forEach(h => { if(HUEVO_DICE[h]) huevos.add(h); });
+    const t = d.taller || {}; taller.ac = t.ac|0; taller.racha = t.racha|0; taller.mejor = t.mejor|0;
+    if(d.aj) Object.keys(AJ).forEach(k => { if(d.aj[k] !== undefined) AJ[k] = d.aj[k]; });
+    if(d.nombre) $('selloNombre').value = d.nombre;
+    t0 = d.t0 || Date.now();
+    ultimoRango = rangoDe(hechos.size).n;
+  }
+  aplicaAjustes();
+  pintaEncargo();
+  armaQuieto();
+  document.addEventListener('pointerdown', () => Ruido.despierta(), {once:true});
+}
+
+
+{
+  const rej = document.createElement('div'); rej.className = 'aulaRejilla';
+  const izq = document.createElement('div'); izq.className = 'colIzq';
+  const der = document.createElement('div'); der.className = 'colDer';
+  const enc = $('pEncargo') || document.querySelector('.panel.encargo');
+  enc.parentNode.insertBefore(rej, enc);
+  rej.appendChild(izq); rej.appendChild(der);
+  izq.appendChild(enc);
+  const inf = $('informe'); if(inf) izq.appendChild(inf);
+  const rot = $('rotuloLibre'); if(rot) der.appendChild(rot);
+  Object.values(SALAS).forEach(id => { const p = $(id); if(p) der.appendChild(p); });
+  const pie = document.querySelector('footer.pie'), marca = document.createComment('pie');
+  if(pie) pie.before(marca);
+  const muda = si => { if(!pie) return; if(si) izq.appendChild(pie); else marca.after(pie); };
+
+  const pinta = () => {
+    const si = document.body.dataset.aula === 'si';
+    muda(si && innerWidth >= 1100);
+    const b = $('bAula');
+    if(b){ b.setAttribute('aria-pressed', String(si)); b.textContent = si ? 'Salir del aula' : 'Aula'; }
+  };
+  window.pintaAula = pinta;
+  addEventListener('resize', pinta);
+  $('bAula').addEventListener('click', () => { AJ.vista = AJ.vista === 'aula' ? 'normal' : 'aula'; aplicaAjustes(); guardaTurno(); });
+  pinta();
+}
+</script>
+</body></html>
